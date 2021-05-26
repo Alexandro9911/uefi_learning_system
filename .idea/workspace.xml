@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="">
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/557a07fb-47b2-41f3-ae51-ae12b0dc5dd0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/557a07fb-47b2-41f3-ae51-ae12b0dc5dd0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server Scripts/getStudentGroups.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/getStudentGroups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server Scripts/joinGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/joinGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navs/TeacherNavs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navs/TeacherNavs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/teacherpage/groupCreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacherpage/groupCreateForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/userpage/joinGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/userpage/joinGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/TeacherPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TeacherPageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/userpageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/userpageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +64,8 @@
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\navs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\teacherpage" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\containers" />
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\teacherpage" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -83,8 +93,16 @@
       <updated>1621882673344</updated>
       <workItem from="1621882674457" duration="8886000" />
       <workItem from="1621935607570" duration="41358000" />
-      <workItem from="1621983309421" duration="127000" />
+      <workItem from="1621983309421" duration="33186000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1621983559133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621983559133</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,5 +119,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

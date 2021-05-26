@@ -4,6 +4,7 @@ import '../App.css'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {setAuthBad, setAuthSuccess, setEmail, setPassw} from "../store/auth/actions";
+import {setUserGroups,setUserPractice,setUserTests} from "../store/userpage/actions";
 import UserNavs from "../components/navs/StudentNavs";
 import {
     BrowserRouter as Router,
@@ -20,20 +21,28 @@ class UserpageContainer extends Component {
     }
 
     async componentDidMount() {
-        let answ
+// select groups
+        let answ = '';
         let resp = await fetch("http://localhost/uefi_learning_system/getStudentGroups.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
             },
             body: new URLSearchParams({
-                id : this.props.id
+                myid : this.props.id
             })
         })
             .then(response => response.json())
             .then(result => answ = result)
-            // тут надо вытащить группы студента в которых он состоит.
+        let array= [];
+        for(let i = 0; i <answ.length; i++){
+            array.push(answ[i]);
+        }
 
+       this.props.setUserGroups(array);
+// select tests
+
+// select practice
     }
 
     showFio() {
@@ -49,7 +58,7 @@ class UserpageContainer extends Component {
                 </div>
                 <Switch>
                     <Route path={'/user_page/join_group'}>
-                        <JoinGroup/>
+                        <JoinGroup myId={this.props.id} userGroups={this.props.userGroups}/>
                     </Route>
                 </Switch>
             </div>
@@ -57,24 +66,25 @@ class UserpageContainer extends Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
         email: state.auth.email,
-        password: state.auth.password,
         id: state.auth.id,
         fio: state.auth.fio,
-        auth: state.auth.auth,
-        groups: state.listgroups.groups
+        userGroups:  state.useractivity.groups,
+        userTests: state.useractivity.tests,
+        userPractice: state.useractivity.practice
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         setEmail: bindActionCreators(setEmail, dispatch),
-        setPassw: bindActionCreators(setPassw, dispatch),
-        setAuthSuccess: bindActionCreators(setAuthSuccess, dispatch),
-        setAuthBad: bindActionCreators(setAuthBad, dispatch),
-        initGroups: bindActionCreators(initList,dispatch)
+        setUserGroups: bindActionCreators(setUserGroups, dispatch),
+        setUserPractice: bindActionCreators(setUserPractice,dispatch),
+        setUserTests: bindActionCreators(setUserTests,dispatch)
+
     }
 }
 

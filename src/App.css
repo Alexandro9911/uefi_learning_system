@@ -225,5 +225,14 @@ a {
   padding: 2%;
 }
 
+.modal_create_practice {
+  border: 2px solid blue;
+  border-radius: 3px;
+  padding: 3%;
+}
+
+
+
+
 
 

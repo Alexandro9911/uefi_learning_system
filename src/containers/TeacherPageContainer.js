@@ -12,6 +12,8 @@ import {
 import TeachersNavs from "../components/navs/TeacherNavs";
 import GroupsPage from "../components/teacherpage/teachergroups";
 import {initList} from "../store/groups/actions";
+import TeacherTestPage from "../components/teacherTestpage/teacherTestPage";
+import TeacherPracticePage from "../components/TeacherPracticePage/TeacherPracticePage";
 
 class TeacherPageContainer extends Component {
     constructor(props) {
@@ -34,6 +36,12 @@ class TeacherPageContainer extends Component {
                 <Switch>
                     <Route path={'/teacher_page/groups'}>
                         <GroupsPage/>
+                    </Route>
+                    <Route path={'/teacher_page/tests'}>
+                        <TeacherTestPage/>
+                    </Route>
+                    <Route path={'/teacher_page/practice'}>
+                        <TeacherPracticePage/>
                     </Route>
                 </Switch>
             </div>

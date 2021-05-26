@@ -11,6 +11,8 @@ import UserpageContainer from "./containers/userpageContainer";
 import JoinGroup from "./components/userpage/joinGroup";
 import TeacherPageContainer from "./containers/TeacherPageContainer";
 import GroupsPage from "./components/teacherpage/teachergroups";
+import TeacherTestPage from "./components/teacherTestpage/teacherTestPage";
+import TeacherPracticePage from "./components/TeacherPracticePage/TeacherPracticePage";
 
 function App() {
     return (
@@ -28,6 +30,12 @@ function App() {
                     </Route>
                     <Route path={"/teacher_page"}>
                         <TeacherPageContainer/>
+                    </Route>
+                    <Route path={'/teacher_page/tests>'}>
+                        <TeacherTestPage/>
+                    </Route>
+                    <Route path={'/teacher_page/practice>'}>
+                        <TeacherPracticePage/>
                     </Route>
                     <Route path={"/"}>
                         <AuthContainer/>

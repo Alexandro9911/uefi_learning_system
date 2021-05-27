@@ -1,5 +1,6 @@
 import React from "react";
 import DynamicSelect from "../Elements/dynamicSelect";
+import EmulatorFormContainer from "../../containers/emulatorFormContainer";
 
 export default class ModalCreatePractice extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ export default class ModalCreatePractice extends React.Component {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
+                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Текст задания</label>
                             <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
                             value={this.props.task_string}
                             onChange={this.changeTaskString}
@@ -66,12 +67,14 @@ export default class ModalCreatePractice extends React.Component {
                         </div>
                         <div className="row g-3">
                             <div className="col">
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label">Выполнить задание с </label>
                                 <input type="text" className="form-control" placeholder="Выполнение с ..."
                                        aria-label="First name"
                                 onChange={this.changeDateFrom}
                                 value={this.props.date_from}/>
                             </div>
                             <div className="col">
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label">Выполнить задание по</label>
                                 <input type="text" className="form-control" placeholder="Выполнить до ..."
                                        aria-label="Last name"
                                 onChange={this.changeDateTo}
@@ -81,6 +84,7 @@ export default class ModalCreatePractice extends React.Component {
                         <br/>
                         <div className="dropdown-divider"/>
                         <br/>
+                        <EmulatorFormContainer status={this.props.status}/>
                     </form>
                     <button onClick={this.hideModal} className="btn btn-sm btn-outline-primary">Закрыть</button>
                 </div>

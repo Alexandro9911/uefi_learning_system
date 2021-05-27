@@ -10,6 +10,19 @@ export const SET_DYNAMIC_CPU = 'SET_DYNAMIC_CPU';
 export const SET_DYNAMIC_HDD = 'SET_DYNAMIC_HDD';
 export const SET_DYNAMIC_DDR = 'SET_DYNAMIC_DDR';
 
+export const SET_ENABLED_CPU_INPUT = 'SET_ENABLED_CPU_INPUT';
+export const SET_DISABLED_CPU_INPUT = 'SET_DISABLED_CPU_INPUT';
+
+export const setCpuInputEnabled = () => ({
+    type: SET_ENABLED_CPU_INPUT,
+    payload: true
+});
+
+export const setCpuInputDisabled = () => ({
+    type: SET_DISABLED_CPU_INPUT,
+    payload: false
+});
+
 export const setDynamicMotherBoard = (list) => ({
     type: SET_DYNAMIC_MOTHERBOARD,
     payload: list

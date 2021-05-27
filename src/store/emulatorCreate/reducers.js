@@ -8,22 +8,24 @@ import {
     SET_DYNAMIC_DDR,
     SET_DYNAMIC_HDD,
     SET_DYNAMIC_CPU,
-    SET_DYNAMIC_MOTHERBOARD
+    SET_DYNAMIC_MOTHERBOARD, SET_ENABLED_CPU_INPUT, SET_DISABLED_CPU_INPUT
 } from "./actions";
 
 
 const initialState = {
-    motherboard: {},
+    motherboard: {},  // выбранные компоненты
     cpu: {},
     quantity_hdd: 0,
     listHdd: [],
     quantity_ddr: 0,
     listDdr: [],
 
-    dynamicMotherboardList: [],
+    dynamicMotherboardList: [], // список доступных компонентов
     dynamicCPUList: [],
     dynamicHDDList: [],
-    dynamicDDRList: []
+    dynamicDDRList: [],
+
+    ena_cpu_input: false
 }
 
 export const createEmulatorReducer = (state = initialState, action) => {
@@ -78,5 +80,16 @@ export const createEmulatorReducer = (state = initialState, action) => {
                 ...state,
                 dynamicDDRList: action.payload
             }
+        case SET_ENABLED_CPU_INPUT:
+            return {
+                ...state,
+                ena_cpu_input: action.payload
+            }
+        case SET_DISABLED_CPU_INPUT:
+            return {
+                ...state,
+                ena_cpu_input: action.payload
+            }
     }
+    return state;
 }

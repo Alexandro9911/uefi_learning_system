@@ -34,7 +34,7 @@ class TeacherPracticePage extends React.Component {
                 setTaskString={this.props.setTaskString}
                 setDateTo={this.props.setDateTo}
                 setTheme={this.props.setTheme}
-                setDateFrom={this.props.date_from}
+                setDateFrom={this.props.setDateFrom}
                 />
                 <div>Here y can se your existing practice for groups</div>
             </div>

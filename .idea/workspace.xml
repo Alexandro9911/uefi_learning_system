@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="+ some things">
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="added some elements to emulatorForm + some server`s scripts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server Scripts/selectCpyByCriteria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/selectCpyByCriteria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EmylatorFormCreate/emulatorFormCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EmylatorFormCreate/emulatorFormCreate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeacherPracticePage/TeacherPracticePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeacherPracticePage/TeacherPracticePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/modal_practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/modal_practice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/emulatorFormContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulatorFormContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/emulatorCreate/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulatorCreate/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/emulatorCreate/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulatorCreate/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server Scripts/selectMotherBoards.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/selectMotherBoards.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elements/dynamicSelectMotherboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/dynamicSelectMotherboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +83,7 @@
       <workItem from="1621882674457" duration="8886000" />
       <workItem from="1621935607570" duration="41358000" />
       <workItem from="1621983309421" duration="35482000" />
-      <workItem from="1622139496798" duration="10824000" />
+      <workItem from="1622139496798" duration="14417000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -103,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622066579113</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added some elements to emulatorForm + some server`s scripts">
+      <created>1622151262173</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622151262173</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="+ some things" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ some things" />
+    <MESSAGE value="added some elements to emulatorForm + some server`s scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some elements to emulatorForm + some server`s scripts" />
   </component>
 </project>

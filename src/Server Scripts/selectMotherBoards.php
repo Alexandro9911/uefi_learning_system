@@ -17,6 +17,7 @@ if(isset($_POST['myid'])) {
                v.name as vendor_name ,
                cn.value as chipset,
                ps.value as proc_soket,
+               processor_soket,
                form_factor,
                dt.value as ddr_type,
                quantity_ddr_ports,

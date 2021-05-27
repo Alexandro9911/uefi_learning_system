@@ -31,7 +31,7 @@ export default class DynamicSelectMotherboard extends React.Component {
                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
             },
             body: new URLSearchParams({
-                board: board
+                socket: board.processor_soket
             })
         })
             .then(response => response.json())

@@ -1,5 +1,5 @@
 import React from "react";
-import EmulatorFormCreate from "../components/EmylatorFormCreate/emulatorFormCreate";
+import EmulatorFormCreate from "../components/EmulatorFormCreate/emulatorFormCreate";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {

@@ -11,26 +11,6 @@ if(isset($_POST['socket'])) {
         echo "connection error";
         die("Connection failed: " . mysqli_connect_error());
     } else {
-//        $sql = "
-//        SELECT motherboard_nom.id,
-//               v.name as vendor_name ,
-//               cn.value as chipset,
-//               ps.value as proc_soket,
-//               form_factor,
-//               dt.value as ddr_type,
-//               quantity_ddr_ports,
-//               pt.value as  pcie_type,
-//               quantity_sata,
-//               speed_sata,
-//               motherboard_nom.name,
-//               system_name
-//        FROM motherboard_nom
-//            join ddr_types dt on motherboard_nom.type_ddr = dt.id
-//            join chipsets_nom cn on cn.id = motherboard_nom.chipset
-//            join pcie_types pt on pt.id = motherboard_nom.PCIe_type
-//            join vendors v on v.id = motherboard_nom.vendor_id
-//            join processor_socets ps on ps.id = motherboard_nom.processor_soket
-//        ";
         $board_socket = $socket;
         $sql = "
         SELECT

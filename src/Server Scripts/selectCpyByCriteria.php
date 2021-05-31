@@ -26,7 +26,6 @@ if(isset($_POST['socket'])) {
                system_freq,
                max_ram,
                max_mem_channel,
-               ddr_types_list,
                max_mem_freq,
                ps.value as soket,
                socket_id,

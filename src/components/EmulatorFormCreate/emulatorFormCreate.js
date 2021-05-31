@@ -52,12 +52,16 @@ export default class EmulatorFormCreate extends React.Component {
                 />
                 <DynamicSelectCpu
                     cpu={this.props.cpu}
+                    board={this.props.motherboard}
                     listCPU={this.props.dynamicCPUList}
                     setCpu={this.props.setCpu}
                     ena_cpu_input={this.props.ena_cpu_input}
                     status={this.props.status}
+                    setDynamicDDR={this.props.setDynamicDDR}
                 />
                 {/*Блок для носителей информации */}
+                <br/>
+                <h6>Носители информации</h6>
                 <DynamicInputQuantity
                     status={this.props.status}
                     motherboard={this.props.motherboard}
@@ -74,18 +78,21 @@ export default class EmulatorFormCreate extends React.Component {
                     setHDD={this.props.setHDD}
                     mode={0}
                 />
-                <DynamicSelectMemory
+                <DynamicSelectMemory id={1}
                     setSelectsDisabled={this.props.setSelectsDisabled}
                     setSelectsEnabled={this.props.setSelectsEnabled}
                     ena_create_selects = {this.props.ena_create_selects}
 
                     status={this.props.status}
-                    dynamicListHdd={this.props.dynamicHDDList}
-                    quantity_hdd={this.props.quantity_hdd}
-                    listHdd={this.props.listHdd}
-                    setHDD={this.props.setHDD}
+                    dynamicList={this.props.dynamicHDDList}
+                    quantity={this.props.quantity_hdd}
+                    list={this.props.listHdd}
+                    set={this.props.setHDD}
+                    mode={0}
                 />
                 {/*Блок для оперативной памяти*/}
+                <br/>
+                <h6>Оперативная память</h6>
                 <DynamicInputQuantity
                     status={this.props.status}
                     motherboard={this.props.motherboard}
@@ -102,18 +109,33 @@ export default class EmulatorFormCreate extends React.Component {
                     setHDD={this.props.setDDR}
                     mode={1}
                 />
-                {/*<DynamicSelectMemory*/}
-                {/*    setSelectsDisabled={this.props.setSelectsDisabled}*/}
-                {/*    setSelectsEnabled={this.props.setSelectsEnabled}*/}
-                {/*    ena_create_selects = {this.props.ena_create_selects}*/}
+                <DynamicSelectMemory id={2}
+                    setSelectsDisabled={this.props.setSelectsDDRdisabled}
+                    setSelectsEnabled={this.props.setSelectsDDRenabled}
+                    ena_create_selects = {this.props.ena_create_ddr_selects}
 
-                {/*    status={this.props.status}*/}
-                {/*    dynamicListHdd={this.props.dynamicHDDList}*/}
-                {/*    quantity_hdd={this.props.quantity_hdd}*/}
-                {/*    listHdd={this.props.listHdd}*/}
-                {/*    setHDD={this.props.setHDD}*/}
-                {/*/>*/}
-                <h6>Выбор оперативной памяти</h6>
+                    status={this.props.status}
+                    dynamicList={this.props.dynamicDDRList}
+                    quantity={this.props.quantity_ddr}
+                    list={this.props.listDdr}
+                    set={this.props.setDDR}
+                    mode={1}
+                />
+                <br/>
+                <div className="dropdown-divider"/>
+                <h6>Критерии оценки</h6>
+                <div className="small">(i) Изменение критерия оценки позволяют задать интервалы значений параметра системы,
+                и сопоставить каждому интервалу оценочную характеристику</div>
+                <br/>
+                <div>Интервал значения частоты процессора, достигнутый в ходе решения задания, который считается
+                оптимальным:</div>
+                <div className="flex_interval">
+                    <div className="critical_interval_part"/>
+                    <div className="normal_interval_part"/>
+                    <div className="perfect_interval_part"/>
+                    <div className="normal_interval_part"/>
+                    <div className="critical_interval_part"/>
+                </div>
             </div>
         )
     }

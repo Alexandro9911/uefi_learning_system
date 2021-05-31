@@ -14,24 +14,30 @@ if(isset($_POST['motherboard_support']) && isset($_POST['cpu_support'])) {
     } else {
         $sql = "
 SELECT 
-        hard_drive_nom.id,
+        ddr_nom.id,
        vendor_id,
-       hard_drive_nom.name,
-       system_name,
        v.name as vendor_name,
-       interface,
-       RPM,
-       freq,
-       buffer_size,
-       speed_data_transaction,
-       time_access,
-       memory_gb_size,
-       type,
-       raid_req,
-       speed_data_read,
-       speed_data_write      
-FROM hard_drive_nom
-join vendors v on v.id = hard_drive_nom.vendor_id";
+       type_ddr,
+       t.value as ddr_type_value,
+       mem,
+       `rank`,
+       type_cheap,
+       ddr_nom.name,
+       product_number,
+       freq_base,
+       speed_pin,
+       max_freq,
+       normal_voltage,
+       max_voltage,
+       form_factor,
+       cas,
+       ras,
+       trp,
+       tras
+        FROM ddr_nom
+join vendors v on v.id = ddr_nom.vendor_id
+join ddr_types t on t.id = ddr_nom.type_ddr
+where t.value = '$board'";
         $res = mysqli_query($connection, $sql);
         $quantity = mysqli_num_rows($res);
 

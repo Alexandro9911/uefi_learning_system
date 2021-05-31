@@ -86,7 +86,7 @@ export const createEmulatorReducer = (state = initialState, action) => {
         case SET_HDD:
             return {
                 ...state,
-                listHdd: action.payload.hdd
+                listHdd: action.payload
             }
         case SET_DDR:
             return {

@@ -25,14 +25,16 @@ export default class DynamicSelectCpu extends React.Component {
 
     async updateDDRList() {
         let answ = '';
-        let resp = await fetch("http://localhost/uefi_learning_system/selectHddByCriteria.php", {
+        let max_cpu_freq = this.props.cpu.max_mem_freq;
+        let motherboard_access = this.props.board.ddr_type;
+        let resp = await fetch("http://localhost/uefi_learning_system/selectDdrByCriteria.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
             },
             body: new URLSearchParams({
-                motherboard_support: 1,
-                cpu_support: 1
+                motherboard_support: motherboard_access,
+                cpu_support: max_cpu_freq
             })
         })
             .then(response => response.json())
@@ -42,7 +44,7 @@ export default class DynamicSelectCpu extends React.Component {
             array.push(answ[i]);
         }
         if (array.length > 0) {
-            this.props.setDynamicHDD(array);
+            this.props.setDynamicDDR(array);
         }
     }
 

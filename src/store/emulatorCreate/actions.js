@@ -84,13 +84,9 @@ export const setQuantityHdd = (num) => ({
     payload: num
 });
 
-export const setHDD = (index,hdd,length) => ({
+export const setHDD = (hdd) => ({
     type: SET_HDD,
-    payload: {
-        index: index,
-        hdd: hdd,
-        length: length
-    }
+    payload: hdd
 });
 
 export const setQuantityDDR = (num) => ({

@@ -11,6 +11,7 @@ export default class ModalCreatePractice extends React.Component {
         this.changeTheme = this.changeTheme.bind(this);
         this.changeDateFrom = this.changeDateFrom.bind(this);
         this.changeDateTo = this.changeDateTo.bind(this);
+        this.onClickSave = this.onClickSave.bind(this);
     }
 
     hideModal(){
@@ -30,6 +31,11 @@ export default class ModalCreatePractice extends React.Component {
     }
     changeDateTo(e){
         this.props.setDateTo(e.target.value);
+    }
+
+   async onClickSave(e){
+        this.props.showModalDownloading();
+
     }
 
     render() {
@@ -86,7 +92,10 @@ export default class ModalCreatePractice extends React.Component {
                         <br/>
                         <EmulatorFormContainer status={this.props.status}/>
                     </form>
-                    <button onClick={this.hideModal} className="btn btn-sm btn-outline-primary">Закрыть</button>
+                    <div className="flex_perf">
+                        <button onClick={this.hideModal} className="btn btn-sm btn-outline-danger">Закрыть</button>
+                        <button onClick={this.onClickSave} className="btn btn-sm btn-outline-success">Coхранить</button>
+                    </div>
                 </div>
             )
         } else {

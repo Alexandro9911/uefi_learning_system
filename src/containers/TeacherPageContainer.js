@@ -4,6 +4,7 @@ import '../App.css'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {setAuthBad, setAuthSuccess, setEmail, setPassw} from "../store/auth/actions";
+import {showModalDownloading,hideModalDownloading} from "../store/modals/actions";
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,6 +15,7 @@ import GroupsPage from "../components/teacherpage/teachergroups";
 import {initList} from "../store/groups/actions";
 import TeacherTestPage from "../components/teacherTestpage/teacherTestPage";
 import TeacherPracticePage from "../components/TeacherPracticePage/TeacherPracticePage";
+import Modal_dowloading from "../components/modals/modal_dowloading";
 
 class TeacherPageContainer extends Component {
     constructor(props) {
@@ -28,6 +30,7 @@ class TeacherPageContainer extends Component {
 
     render() {
         return (
+            <div>
             <div className="grid-container-user">
                 <div className="mainbar">
                     <h6>{this.showFio()}</h6>
@@ -45,6 +48,7 @@ class TeacherPageContainer extends Component {
                     </Route>
                 </Switch>
             </div>
+            </div>
         );
     }
 }
@@ -57,7 +61,8 @@ const mapStateToProps = (state) => {
         id: state.auth.id,
         fio: state.auth.fio,
         auth: state.auth.auth,
-        groups: state.listgroups.groups
+        groups: state.listgroups.groups,
+        modal_downloading_status: state.modals.modal_downloading
     }
 }
 
@@ -67,7 +72,9 @@ const mapDispatchToProps = (dispatch) => {
         setPassw: bindActionCreators(setPassw, dispatch),
         setAuthSuccess: bindActionCreators(setAuthSuccess, dispatch),
         setAuthBad: bindActionCreators(setAuthBad, dispatch),
-        initGroups: bindActionCreators(initList,dispatch)
+        initGroups: bindActionCreators(initList,dispatch),
+        showModalDownloading: bindActionCreators(showModalDownloading,dispatch),
+        hideModalDownloading: bindActionCreators(hideModalDownloading,dispatch)
     }
 }
 

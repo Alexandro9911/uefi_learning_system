@@ -20,6 +20,8 @@ import {
     setSelectsDDRdisabled,
     setSelectsDDRenabled
 } from "../store/emulatorCreate/actions";
+import Modal_dowloading from "../components/modals/modal_dowloading";
+import {hideModalDownloading, showModalDownloading} from "../store/modals/actions";
 
 class EmulatorFormContainer extends React.Component {
     constructor(props) {
@@ -65,6 +67,11 @@ class EmulatorFormContainer extends React.Component {
                 setSelectsDDRdisabled={this.props.setSelectsDDRdisabled}
                 setSelectsDDRenabled={this.props.setSelectsDDRenabled}
                 ena_create_ddr_selects = {this.props.ena_create_ddr_selects}
+
+                modal_downloading_status={this.props.modal_downloading_status}
+                showModalDownloading={this.props.showModalDownloading}
+                hideModalDownloading={this.props.hideModalDownloading}
+
             />
         )
     }
@@ -86,7 +93,8 @@ const mapStateToProps = (state) => {
         dynamicMotherboardList: state.emulatorform.dynamicMotherboardList,
         dynamicCPUList: state.emulatorform.dynamicCPUList,
         dynamicHDDList: state.emulatorform.dynamicHDDList,
-        dynamicDDRList: state.emulatorform.dynamicHDDList
+        dynamicDDRList: state.emulatorform.dynamicDDRList,
+        modal_downloading_status: state.modals.modal_downloading
     }
 }
 
@@ -109,7 +117,9 @@ const mapDispatchToProps = (dispatch) => {
         setSelectsDisabled: bindActionCreators(setSelectsDisabled,dispatch),
         setSelectsEnabled: bindActionCreators(setSelectsEnabled,dispatch),
         setSelectsDDRdisabled: bindActionCreators(setSelectsDDRdisabled, dispatch),
-        setSelectsDDRenabled: bindActionCreators(setSelectsDDRenabled,dispatch)
+        setSelectsDDRenabled: bindActionCreators(setSelectsDDRenabled,dispatch),
+        showModalDownloading: bindActionCreators(showModalDownloading,dispatch),
+        hideModalDownloading: bindActionCreators(hideModalDownloading,dispatch)
     }
 }
 

@@ -12,7 +12,6 @@ class Navbar extends Component {
                 <div className="navbar_btn_container">
                     <Link to={'/'} className="btn btn-outline-dark">Вход</Link>
                     <Link to={'/registration_page'} className="btn btn-outline-dark">Регистрация</Link>
-                    <Link to={'/user_page'} className="btn btn-outline-dark">vjz</Link>
                 </div>
             </div>
         );

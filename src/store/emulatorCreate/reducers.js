@@ -8,14 +8,20 @@ import {
     SET_DYNAMIC_DDR,
     SET_DYNAMIC_HDD,
     SET_DYNAMIC_CPU,
-    SET_DYNAMIC_MOTHERBOARD, SET_ENABLED_CPU_INPUT, SET_DISABLED_CPU_INPUT
+    SET_DYNAMIC_MOTHERBOARD,
+    SET_ENABLED_CPU_INPUT,
+    SET_DISABLED_CPU_INPUT,
+    SET_DISABLED_SELECTS_HDD,
+    SET_ENABLED_SELECTS_HDD,
+    SET_DISABLED_SELECTS_DDR,
+    SET_ENABLED_SELECTS_DDR
 } from "./actions";
 
 
 const initialState = {
     motherboard: {},  // выбранные компоненты
     cpu: {},
-    quantity_hdd: 0,
+    quantity_hdd: null,
     listHdd: [],
     quantity_ddr: 0,
     listDdr: [],
@@ -25,11 +31,33 @@ const initialState = {
     dynamicHDDList: [],
     dynamicDDRList: [],
 
-    ena_cpu_input: false
+    ena_cpu_input: false,
+    ena_create_selects: false,
+    ena_create_ddr_selects: false
 }
 
 export const createEmulatorReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_DISABLED_SELECTS_DDR:
+            return {
+                ...state,
+                ena_create_ddr_selects: action.payload
+            }
+        case SET_ENABLED_SELECTS_DDR:
+            return {
+                ...state,
+                ena_create_ddr_selects: action.payload
+            }
+        case SET_DISABLED_SELECTS_HDD:
+            return {
+                ...state,
+                ena_create_selects: action.payload
+            }
+        case SET_ENABLED_SELECTS_HDD:
+            return {
+                ...state,
+                ena_create_selects: action.payload
+            }
         case SET_MOTHERBOARD:
             return {
                 ...state,
@@ -41,9 +69,14 @@ export const createEmulatorReducer = (state = initialState, action) => {
                 cpu: action.payload
             }
         case SET_QUANTITY_HDD:
+            let arr = [];
+            for(let i = 0; i < action.payload; i++){
+                arr.push({id: i});
+            }
             return  {
                 ...state,
-                quantity_hdd: action.payload
+                quantity_hdd: action.payload,
+                listHdd: arr
             }
         case SET_QUANTITY_DDR:
             return {
@@ -53,7 +86,7 @@ export const createEmulatorReducer = (state = initialState, action) => {
         case SET_HDD:
             return {
                 ...state,
-                listHdd: action.payload
+                listHdd: action.payload.hdd
             }
         case SET_DDR:
             return {

@@ -6,6 +6,7 @@ export default class DynamicSelectMotherboard extends React.Component {
 
         this.onChangeValue = this.onChangeValue.bind(this);
         this.updateCPUList = this.updateCPUList.bind(this);
+        this.updateHDDList = this.updateHDDList.bind(this);
     }
 
     onChangeValue(e) {
@@ -21,6 +22,7 @@ export default class DynamicSelectMotherboard extends React.Component {
             }
         }
         this.updateCPUList(b)
+        this.updateHDDList()
     }
 
     async updateCPUList(board) {
@@ -45,6 +47,28 @@ export default class DynamicSelectMotherboard extends React.Component {
             this.props.setCpuInputEnabled();
         } else {
             this.props.setCpuInputDisabled();
+        }
+    }
+
+    async updateHDDList() {
+        let answ = '';
+        let resp = await fetch("http://localhost/uefi_learning_system/selectHddByCriteria.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                myid: 1
+            })
+        })
+            .then(response => response.json())
+            .then(result => answ = result)
+        let array = [];
+        for (let i = 0; i < answ.length; i++) {
+            array.push(answ[i]);
+        }
+        if (array.length > 0) {
+            this.props.setDynamicHDD(array);
         }
     }
 

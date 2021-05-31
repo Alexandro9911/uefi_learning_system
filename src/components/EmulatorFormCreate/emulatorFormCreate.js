@@ -1,8 +1,8 @@
 import React from "react";
 import DynamicSelectMotherboard from "../Elements/dynamicSelectMotherboard";
 import DynamicSelectCpu from "../Elements/dynamicSelectCpu";
-import DynamicInputHdd from "../Elements/dynamicInputHdd";
-import DynamicSelectHdd from "../Elements/dynamicSelectHdd";
+import DynamicInputQuantity from "../Elements/dynamicInputQuantity";
+import DynamicSelectMemory from "../Elements/dynamicSelectMemory";
 
 export default class EmulatorFormCreate extends React.Component {
     constructor(props) {
@@ -46,6 +46,8 @@ export default class EmulatorFormCreate extends React.Component {
 
                 setCpuInputEnabled={this.props.setCpuInputEnabled}
                 setCpuInputDisabled={this.props.setCpuInputDisabled}
+
+                setDynamicHDD={this.props.setDynamicHDD}
                 // мб еще для блокировки и определения следующих компонентов
                 />
                 <DynamicSelectCpu
@@ -55,24 +57,62 @@ export default class EmulatorFormCreate extends React.Component {
                     ena_cpu_input={this.props.ena_cpu_input}
                     status={this.props.status}
                 />
-                <DynamicInputHdd
+                {/*Блок для носителей информации */}
+                <DynamicInputQuantity
                     status={this.props.status}
-                    board={this.props.motherboard}
+                    motherboard={this.props.motherboard}
                     setQuantityHDD={this.props.setQuantityHdd}
                     quantity_hdd={this.props.quantity_hdd}
 
                     setDynamicHDD={this.props.setDynamicHDD}
                     dynamicHDDList={this.props.dynamicHDDList}
+
+                    setSelectsDisabled={this.props.setSelectsDisabled}
+                    setSelectsEnabled={this.props.setSelectsEnabled}
+                    ena_create_selects = {this.props.ena_create_selects}
+                    listHdd={this.props.listHdd}
+                    setHDD={this.props.setHDD}
+                    mode={0}
                 />
-                <DynamicSelectHdd
+                <DynamicSelectMemory
+                    setSelectsDisabled={this.props.setSelectsDisabled}
+                    setSelectsEnabled={this.props.setSelectsEnabled}
+                    ena_create_selects = {this.props.ena_create_selects}
+
                     status={this.props.status}
                     dynamicListHdd={this.props.dynamicHDDList}
                     quantity_hdd={this.props.quantity_hdd}
                     listHdd={this.props.listHdd}
                     setHDD={this.props.setHDD}
                 />
-                <h6>Выбор количества носителей информации</h6>
-                <h6>Выбор количества плашек оперативной памяти</h6>
+                {/*Блок для оперативной памяти*/}
+                <DynamicInputQuantity
+                    status={this.props.status}
+                    motherboard={this.props.motherboard}
+                    setQuantityHDD={this.props.setQuantityDDR}
+                    quantity_hdd={this.props.quantity_ddr}
+
+                    setDynamicHDD={this.props.setDynamicDDR}
+                    dynamicHDDList={this.props.dynamicDDRList}
+
+                    setSelectsDisabled={this.props.setSelectsDDRdisabled}
+                    setSelectsEnabled={this.props.setSelectsDDRenabled}
+                    ena_create_selects = {this.props.ena_create_ddr_selects}
+                    listHdd={this.props.listDdr}
+                    setHDD={this.props.setDDR}
+                    mode={1}
+                />
+                {/*<DynamicSelectMemory*/}
+                {/*    setSelectsDisabled={this.props.setSelectsDisabled}*/}
+                {/*    setSelectsEnabled={this.props.setSelectsEnabled}*/}
+                {/*    ena_create_selects = {this.props.ena_create_selects}*/}
+
+                {/*    status={this.props.status}*/}
+                {/*    dynamicListHdd={this.props.dynamicHDDList}*/}
+                {/*    quantity_hdd={this.props.quantity_hdd}*/}
+                {/*    listHdd={this.props.listHdd}*/}
+                {/*    setHDD={this.props.setHDD}*/}
+                {/*/>*/}
                 <h6>Выбор оперативной памяти</h6>
             </div>
         )

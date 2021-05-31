@@ -13,6 +13,32 @@ export const SET_DYNAMIC_DDR = 'SET_DYNAMIC_DDR';
 export const SET_ENABLED_CPU_INPUT = 'SET_ENABLED_CPU_INPUT';
 export const SET_DISABLED_CPU_INPUT = 'SET_DISABLED_CPU_INPUT';
 
+export const SET_ENABLED_SELECTS_HDD = 'SET_ENABLED_SELECTS_HDD';
+export const SET_DISABLED_SELECTS_HDD = 'SET_DISABLED_SELECTS_HDD'
+
+export const SET_ENABLED_SELECTS_DDR = 'SET_ENABLED_SELECTS_DDR';
+export const SET_DISABLED_SELECTS_DDR = 'SET_DISABLED_SELECTS_DDR'
+
+export const setSelectsDDRenabled = () => ({
+    type: SET_ENABLED_SELECTS_DDR,
+    payload: true
+})
+
+export const setSelectsDDRdisabled = () => ({
+    type: SET_DISABLED_SELECTS_DDR,
+    payload: false
+})
+export const setSelectsEnabled = () => ({
+    type: SET_ENABLED_SELECTS_HDD,
+    payload: true
+});
+
+export const setSelectsDisabled = () => ({
+    type: SET_DISABLED_SELECTS_HDD,
+    payload: false
+});
+
+
 export const setCpuInputEnabled = () => ({
     type: SET_ENABLED_CPU_INPUT,
     payload: true
@@ -58,9 +84,13 @@ export const setQuantityHdd = (num) => ({
     payload: num
 });
 
-export const setHDD = (hdd) => ({
+export const setHDD = (index,hdd,length) => ({
     type: SET_HDD,
-    payload: hdd
+    payload: {
+        index: index,
+        hdd: hdd,
+        length: length
+    }
 });
 
 export const setQuantityDDR = (num) => ({

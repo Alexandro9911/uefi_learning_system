@@ -14,7 +14,12 @@ import {
     setQuantityDDR,
     setQuantityHdd,
     setCpuInputEnabled,
-    setCpuInputDisabled} from "../store/emulatorCreate/actions";
+    setCpuInputDisabled,
+    setSelectsDisabled,
+    setSelectsEnabled,
+    setSelectsDDRdisabled,
+    setSelectsDDRenabled
+} from "../store/emulatorCreate/actions";
 
 class EmulatorFormContainer extends React.Component {
     constructor(props) {
@@ -52,6 +57,14 @@ class EmulatorFormContainer extends React.Component {
 
                 setCpuInputEnabled={this.props.setCpuInputEnabled}
                 setCpuInputDisabled={this.props.setCpuInputDisabled}
+
+                setSelectsDisabled={this.props.setSelectsDisabled}
+                setSelectsEnabled={this.props.setSelectsEnabled}
+                ena_create_selects = {this.props.ena_create_selects}
+
+                setSelectsDDRdisabled={this.props.setSelectsDDRdisabled}
+                setSelectsDDRenabled={this.props.setSelectsDDRenabled}
+                ena_create_ddr_selects = {this.props.ena_create_ddr_selects}
             />
         )
     }
@@ -66,6 +79,9 @@ const mapStateToProps = (state) => {
         quantity_ddr: state.emulatorform.quantity_ddr,
         listDdr: state.emulatorform.listDdr,
         ena_cpu_input: state.emulatorform.ena_cpu_input,
+
+        ena_create_selects: state.emulatorform.ena_create_selects,
+        ena_create_ddr_selects: state.emulatorform.ena_create_ddr_selects,
 
         dynamicMotherboardList: state.emulatorform.dynamicMotherboardList,
         dynamicCPUList: state.emulatorform.dynamicCPUList,
@@ -89,7 +105,11 @@ const mapDispatchToProps = (dispatch) => {
         setDDR: bindActionCreators(setDDR,dispatch),
 
         setCpuInputEnabled: bindActionCreators(setCpuInputEnabled,dispatch),
-        setCpuInputDisabled: bindActionCreators(setCpuInputDisabled,dispatch)
+        setCpuInputDisabled: bindActionCreators(setCpuInputDisabled,dispatch),
+        setSelectsDisabled: bindActionCreators(setSelectsDisabled,dispatch),
+        setSelectsEnabled: bindActionCreators(setSelectsEnabled,dispatch),
+        setSelectsDDRdisabled: bindActionCreators(setSelectsDDRdisabled, dispatch),
+        setSelectsDDRenabled: bindActionCreators(setSelectsDDRenabled,dispatch)
     }
 }
 

@@ -5,7 +5,7 @@ export default class DynamicSelectCpu extends React.Component {
         super(props);
 
         this.onChangeValue = this.onChangeValue.bind(this);
-        //   this.updateCPUList = this.updateCPUList.bind(this);
+        this.updateDDRList = this.updateDDRList.bind(this);
     }
 
     onChangeValue(e) {
@@ -20,32 +20,31 @@ export default class DynamicSelectCpu extends React.Component {
                 break;
             }
         }
+        this.updateDDRList()
     }
 
-    // async updateCPUList(board){
-    //     let answ = '';
-    //     let resp = await fetch("http://localhost/uefi_learning_system/selectCpyByCriteria.php", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-    //         },
-    //         body: new URLSearchParams({
-    //             board : this.props.motherboard
-    //         })
-    //     })
-    //         .then(response => response.json())
-    //         .then(result => answ = result)
-    //     let array= [];
-    //     for(let i = 0; i <answ.length; i++){
-    //         array.push(answ[i]);
-    //     }
-    //     if(array.length > 0){
-    //         this.props.setCpuInputEnabled();
-    //         this.props.setDynamicCPU(array);
-    //     } else {
-    //         this.props.setCpuInputDisabled();
-    //     }
-    // }
+    async updateDDRList() {
+        let answ = '';
+        let resp = await fetch("http://localhost/uefi_learning_system/selectHddByCriteria.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                motherboard_support: 1,
+                cpu_support: 1
+            })
+        })
+            .then(response => response.json())
+            .then(result => answ = result)
+        let array = [];
+        for (let i = 0; i < answ.length; i++) {
+            array.push(answ[i]);
+        }
+        if (array.length > 0) {
+            this.props.setDynamicHDD(array);
+        }
+    }
 
     render() {
         if (this.props.ena_cpu_input) {

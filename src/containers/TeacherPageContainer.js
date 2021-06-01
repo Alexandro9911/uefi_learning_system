@@ -15,7 +15,7 @@ import GroupsPage from "../components/teacherpage/teachergroups";
 import {initList} from "../store/groups/actions";
 import TeacherTestPage from "../components/teacherTestpage/teacherTestPage";
 import TeacherPracticePage from "../components/TeacherPracticePage/TeacherPracticePage";
-import Modal_dowloading from "../components/modals/modal_dowloading";
+import {setListGroupGractice} from "../store/groupspractice/actions";
 
 class TeacherPageContainer extends Component {
     constructor(props) {
@@ -27,6 +27,22 @@ class TeacherPageContainer extends Component {
         return this.props.fio;
     }
 
+    async componentDidMount() {
+        let answ = '';
+        let resp = await fetch("http://localhost/uefi_learning_system/getTeacherGroups.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                ovner: this.props.id
+            })
+        })
+            .then(response => response.json())
+            .then(result => answ = result)
+        let groups =JSON.parse(JSON.stringify(answ))
+        this.props.setListGroupPractice(groups);
+    }
 
     render() {
         return (
@@ -44,7 +60,9 @@ class TeacherPageContainer extends Component {
                         <TeacherTestPage/>
                     </Route>
                     <Route path={'/teacher_page/practice'}>
-                        <TeacherPracticePage/>
+                        <TeacherPracticePage
+                        listGroups={this.props.listGroups}
+                        />
                     </Route>
                 </Switch>
             </div>
@@ -62,7 +80,8 @@ const mapStateToProps = (state) => {
         fio: state.auth.fio,
         auth: state.auth.auth,
         groups: state.listgroups.groups,
-        modal_downloading_status: state.modals.modal_downloading
+        modal_downloading_status: state.modals.modal_downloading,
+        listGroups: state.practicepage.listGroups
     }
 }
 
@@ -74,7 +93,8 @@ const mapDispatchToProps = (dispatch) => {
         setAuthBad: bindActionCreators(setAuthBad, dispatch),
         initGroups: bindActionCreators(initList,dispatch),
         showModalDownloading: bindActionCreators(showModalDownloading,dispatch),
-        hideModalDownloading: bindActionCreators(hideModalDownloading,dispatch)
+        hideModalDownloading: bindActionCreators(hideModalDownloading,dispatch),
+        setListGroupPractice: bindActionCreators(setListGroupGractice,dispatch)
     }
 }
 

@@ -36,6 +36,42 @@ export default class ModalCreatePractice extends React.Component {
    async onClickSave(e){
         this.props.showModalDownloading();
 
+        let emulator_params = {
+            motherboard: this.props.motherboard,
+            cpu: this.props.cpu,
+            listHdd: this.props.listHdd,
+            listDdr: this.props.listDdr
+        }
+
+        let about_ovner = {
+            group_id: this.props.group_id,
+            group_title: this.props.group_title,
+            task_string:this.props.task_string,
+            theme:this.props.theme,
+            date_from:this.props.date_from,
+            date_to: this.props.date_to,
+            ovner_id: this.props.myid
+        }
+
+       let answ = '';
+       let resp = await fetch("http://localhost/uefi_learning_system/createEmulator.php", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+           },
+           body: new URLSearchParams({
+               emulator_params : JSON.stringify(emulator_params),
+               about_ovner: JSON.stringify(about_ovner)
+           })
+       })
+           .then(response => response.text())
+           .then(result => answ = result)
+        //here some code with data about emulator to server
+       // here some code to get response with settings for emulator from server
+
+        this.props.hideModalDownloading();
+        this.props.hideModalPractice()
+
     }
 
     render() {

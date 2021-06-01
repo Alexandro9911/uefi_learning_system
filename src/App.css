@@ -275,6 +275,27 @@ a {
   background-color: rgba(72,72,72,0.37)
 }
 
+.group_card {
+  padding: 2%;
+  margin: 1%;
+  border: rgba(44,43,45,0.37) solid 2px;
+  border-radius: 3px;
+}
+
+.task_card {
+  padding: 2%;
+  margin: 1%;
+  border: rgba(46, 24, 67, 0.37) solid 2px;
+  border-radius: 3px;
+}
+
+.flex_btn{
+  width: auto;
+  display: flex;
+  gap: 3px
+}
+
+
 
 
 

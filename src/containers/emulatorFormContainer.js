@@ -20,7 +20,6 @@ import {
     setSelectsDDRdisabled,
     setSelectsDDRenabled
 } from "../store/emulatorCreate/actions";
-import Modal_dowloading from "../components/modals/modal_dowloading";
 import {hideModalDownloading, showModalDownloading} from "../store/modals/actions";
 
 class EmulatorFormContainer extends React.Component {

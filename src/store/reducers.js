@@ -6,6 +6,7 @@ import {userActivityReducer} from "./userpage/reducers";
 import {modalReducer} from "./modals/reducers";
 import {practiceCreateReducer} from "./practiceCreate/reducers";
 import {createEmulatorReducer} from "./emulatorCreate/reducers";
+import {practiceGroupReducer} from "./groupspractice/reducers";
 
 export default combineReducers({
     auth: authReducer,
@@ -15,5 +16,6 @@ export default combineReducers({
     useractivity: userActivityReducer,
     modals: modalReducer,
     practiceform: practiceCreateReducer,
-    emulatorform: createEmulatorReducer
+    emulatorform: createEmulatorReducer,
+    practicepage: practiceGroupReducer
 })

@@ -3,6 +3,7 @@ import DynamicSelectMotherboard from "../Elements/dynamicSelectMotherboard";
 import DynamicSelectCpu from "../Elements/dynamicSelectCpu";
 import DynamicInputQuantity from "../Elements/dynamicInputQuantity";
 import DynamicSelectMemory from "../Elements/dynamicSelectMemory";
+import EmulatorFormContainer from "../../containers/emulatorFormContainer";
 
 export default class EmulatorFormCreate extends React.Component {
     constructor(props) {
@@ -123,19 +124,7 @@ export default class EmulatorFormCreate extends React.Component {
                 />
                 <br/>
                 <div className="dropdown-divider"/>
-                <h6>Критерии оценки</h6>
-                <div className="small">(i) Изменение критерия оценки позволяют задать интервалы значений параметра системы,
-                и сопоставить каждому интервалу оценочную характеристику</div>
-                <br/>
-                <div>Интервал значения частоты процессора, достигнутый в ходе решения задания, который считается
-                оптимальным:</div>
-                <div className="flex_interval">
-                    <div className="critical_interval_part"/>
-                    <div className="normal_interval_part"/>
-                    <div className="perfect_interval_part"/>
-                    <div className="normal_interval_part"/>
-                    <div className="critical_interval_part"/>
-                </div>
+                {/*<EmulatorFormContainer/>*/}
             </div>
         )
     }

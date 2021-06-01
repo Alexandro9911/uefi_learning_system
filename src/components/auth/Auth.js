@@ -19,7 +19,7 @@ export default class Auth extends React.Component {
         this.props.setPassw(event.target.value);
     }
 
-    async onSubmitHandler() {
+    async onSubmitHandler(e) {
         let answ = '';
         // добавить шифрование паролей.
         let resp = await fetch("http://localhost/uefi_learning_system/autorizeUser.php", {
@@ -93,7 +93,7 @@ export default class Auth extends React.Component {
                     <h4>Вход</h4>
                     <div className="dropdown-divider"/>
                     <br/>
-                    <form>
+                    <div>
                         <div className="form-floating mb-3">
                             <input type="text" className="form-control" id="floatingInput"
                                    placeholder="name@example.com"
@@ -110,9 +110,11 @@ export default class Auth extends React.Component {
                                    value={this.props.password}/>
                             <label htmlFor="floatingPassword">Пароль</label>
                         </div>
-                        <Link to={this.props.link} onClick={this.onSubmitHandler}
-                              className="btn btn-outline-dark">   Войти   </Link>
-                    </form>
+                        <div>
+                            <Link to={this.props.link} onClick={this.onSubmitHandler}
+                                  className="btn btn-outline-dark">   Войти   </Link>
+                        </div>
+                    </div>
                     <div className="dropdown-divider"/>
                     <h6>Еще не зарегистрированы?</h6>
                     <Link to="/registration_page" className="btn-sm btn-outline-primary">Зарегистрироваться</Link>

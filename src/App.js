@@ -5,20 +5,21 @@ import {
     Route
 } from "react-router-dom";
 import Navbar from "./components/navs/mainNavbar";
-import RegistrationContainer from "./containers/RegistrationContainer";
-import AuthContainer from "./containers/AuthContainer";
-import UserpageContainer from "./containers/userpageContainer";
-import JoinGroup from "./components/userpage/joinGroup";
-import TeacherPageContainer from "./containers/TeacherPageContainer";
-import GroupsPage from "./components/teacherpage/teachergroups";
-import TeacherTestPage from "./components/teacherTestpage/teacherTestPage";
-import TeacherPracticePage from "./components/TeacherPracticePage/TeacherPracticePage";
+import RegistrationContainer from "./containers/both/RegistrationContainer";
+import AuthContainer from "./containers/both/AuthContainer";
+import UserpageContainer from "./containers/student/userpage/userpageContainer";
+import JoinGroup from "./components/student/userpage/joinGroup";
+import TeacherPageContainer from "./containers/teacher/TeacherPageContainer";
+import TeacherTestPage from "./components/teacher/teacherTestpage/teacherTestPage";
+import TeacherPracticePage from "./components/teacher/TeacherPracticePage/TeacherPracticePage";
+import PracticePageContainer from "./containers/student/practicepage/practicePageContainer";
 
 function App() {
     return (
             <Router>
                 <Navbar/>
                 <Switch>
+
                     <Route path={"/registration_page"}>
                         <RegistrationContainer/>
                     </Route>
@@ -36,6 +37,9 @@ function App() {
                     </Route>
                     <Route path={'/teacher_page/practice>'}>
                         <TeacherPracticePage/>
+                    </Route>
+                    <Route path={'/user_page/practice_page'}>
+                        <PracticePageContainer/>
                     </Route>
                     <Route path={"/"}>
                         <AuthContainer/>

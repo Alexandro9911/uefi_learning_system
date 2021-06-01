@@ -1,5 +1,5 @@
 import React from "react";
-import MarksCriteriaForm from "../components/EmulatorFormCreate/MarksCriteriaForm";
+import MarksCriteriaForm from "../../components/teacher/EmulatorFormCreate/MarksCriteriaForm";
 
 import {connect} from "react-redux";
 

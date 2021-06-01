@@ -1,9 +1,9 @@
 import React from "react";
-import DynamicSelectMotherboard from "../Elements/dynamicSelectMotherboard";
-import DynamicSelectCpu from "../Elements/dynamicSelectCpu";
-import DynamicInputQuantity from "../Elements/dynamicInputQuantity";
-import DynamicSelectMemory from "../Elements/dynamicSelectMemory";
-import EmulatorFormContainer from "../../containers/emulatorFormContainer";
+import DynamicSelectMotherboard from "../../Elements/dynamicSelectMotherboard";
+import DynamicSelectCpu from "../../Elements/dynamicSelectCpu";
+import DynamicInputQuantity from "../../Elements/dynamicInputQuantity";
+import DynamicSelectMemory from "../../Elements/dynamicSelectMemory";
+import EmulatorFormContainer from "../../../containers/teacher/emulatorFormContainer";
 
 export default class EmulatorFormCreate extends React.Component {
     constructor(props) {

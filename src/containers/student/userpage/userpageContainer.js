@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'
+import '../../../App.css'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {setAuthBad, setAuthSuccess, setEmail, setPassw} from "../store/auth/actions";
-import {setUserGroups,setUserPractice,setUserTests} from "../store/userpage/actions";
-import UserNavs from "../components/navs/StudentNavs";
+import {setEmail} from "../../../store/auth/actions";
+import {setUserGroups,setUserPractice,setUserTests} from "../../../store/userpage/actions";
+import UserNavs from "../../../components/navs/StudentNavs";
 import {
-    BrowserRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
-import JoinGroup from "../components/userpage/joinGroup";
-import {initList} from "../store/groups/actions";
+import JoinGroup from "../../../components/student/userpage/joinGroup";
+import PracticePageContainer from "../practicepage/practicePageContainer";
+import {setStudentsPractice} from "../../../store/practice_student/actions";
 
 class UserpageContainer extends Component {
     constructor(props) {
         super(props);
 
+        this.selectPractice = this.selectPractice.bind(this);
     }
 
     async componentDidMount() {
@@ -38,11 +39,25 @@ class UserpageContainer extends Component {
         for(let i = 0; i <answ.length; i++){
             array.push(answ[i]);
         }
-
+        this.selectPractice();
        this.props.setUserGroups(array);
 // select tests
+    }
 
-// select practice
+    async selectPractice(){
+        let answ = '';
+        let resp = await fetch("http://localhost/uefi_learning_system/selectStudentPractice.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                myid : this.props.id
+            })
+        })
+            .then(response => response.json())
+            .then(result => answ = result)
+            this.props.setListPractice(JSON.parse(JSON.stringify(answ)));
     }
 
     showFio() {
@@ -57,6 +72,9 @@ class UserpageContainer extends Component {
                     <UserNavs/>
                 </div>
                 <Switch>
+                    <Route path={'/user_page/practice_page'}>
+                        <PracticePageContainer />
+                    </Route>
                     <Route path={'/user_page/join_group'}>
                         <JoinGroup myId={this.props.id} userGroups={this.props.userGroups}/>
                     </Route>
@@ -83,8 +101,8 @@ const mapDispatchToProps = (dispatch) => {
         setEmail: bindActionCreators(setEmail, dispatch),
         setUserGroups: bindActionCreators(setUserGroups, dispatch),
         setUserPractice: bindActionCreators(setUserPractice,dispatch),
-        setUserTests: bindActionCreators(setUserTests,dispatch)
-
+        setUserTests: bindActionCreators(setUserTests,dispatch),
+        setListPractice: bindActionCreators(setStudentsPractice,dispatch)
     }
 }
 

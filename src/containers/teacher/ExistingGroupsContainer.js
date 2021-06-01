@@ -1,9 +1,9 @@
 import React from "react";
-import FormGroupCreate from "../components/teacherpage/groupCreateForm";
+import FormGroupCreate from "../../components/teacher/teacherpage/groupCreateForm";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {addGroup, clearForm, setDescr, setTitle, setToken} from "../store/groups/actions";
-import GroupList from "../components/teacherpage/groupList";
+import {addGroup, clearForm, setDescr, setTitle, setToken} from "../../store/groups/actions";
+import GroupList from "../../components/teacher/teacherpage/groupList";
 
 class ExistingGroupsContainer extends React.Component {
 

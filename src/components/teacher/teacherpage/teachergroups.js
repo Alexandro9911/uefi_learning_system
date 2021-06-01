@@ -1,6 +1,6 @@
 import React from "react";
-import GroupCreateContainer from "../../containers/groupCreateContainer";
-import ExistingGroupsContainer from "../../containers/ExistingGroupsContainer";
+import GroupCreateContainer from "../../../containers/teacher/groupCreateContainer";
+import ExistingGroupsContainer from "../../../containers/teacher/ExistingGroupsContainer";
 
 export default class GroupsPage extends React.Component {
 

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Registration from "../components/registration/Registration";
+import Registration from "../../components/registration/Registration";
 import {connect} from "react-redux";
-import {setEmail, setPassw,setRepPassw} from "../store/registration/actions";
+import {setEmail, setPassw,setRepPassw} from "../../store/registration/actions";
 import {bindActionCreators} from "redux";
 
 class RegistrationContainer extends Component {

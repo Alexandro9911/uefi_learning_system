@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'
+import '../../App.css'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {setAuthBad, setAuthSuccess, setEmail, setPassw} from "../store/auth/actions";
-import {showModalDownloading,hideModalDownloading} from "../store/modals/actions";
+import {setAuthBad, setAuthSuccess, setEmail, setPassw} from "../../store/auth/actions";
+import {showModalDownloading,hideModalDownloading} from "../../store/modals/actions";
 import {
     BrowserRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
-import TeachersNavs from "../components/navs/TeacherNavs";
-import GroupsPage from "../components/teacherpage/teachergroups";
-import {initList} from "../store/groups/actions";
-import TeacherTestPage from "../components/teacherTestpage/teacherTestPage";
-import TeacherPracticePage from "../components/TeacherPracticePage/TeacherPracticePage";
-import {setListGroupGractice} from "../store/groupspractice/actions";
+import TeachersNavs from "../../components/navs/TeacherNavs";
+import GroupsPage from "../../components/teacher/teacherpage/teachergroups";
+import {initList} from "../../store/groups/actions";
+import TeacherTestPage from "../../components/teacher/teacherTestpage/teacherTestPage";
+import TeacherPracticePage from "../../components/teacher/TeacherPracticePage/TeacherPracticePage";
+import {setListGroupGractice} from "../../store/groupspractice/actions";
 
 class TeacherPageContainer extends Component {
     constructor(props) {

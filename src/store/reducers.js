@@ -7,6 +7,7 @@ import {modalReducer} from "./modals/reducers";
 import {practiceCreateReducer} from "./practiceCreate/reducers";
 import {createEmulatorReducer} from "./emulatorCreate/reducers";
 import {practiceGroupReducer} from "./groupspractice/reducers";
+import {studentsPracticeReducer} from "./practice_student/reducers";
 
 export default combineReducers({
     auth: authReducer,
@@ -17,5 +18,6 @@ export default combineReducers({
     modals: modalReducer,
     practiceform: practiceCreateReducer,
     emulatorform: createEmulatorReducer,
-    practicepage: practiceGroupReducer
+    practicepage: practiceGroupReducer,
+    studentpractice: studentsPracticeReducer
 })

@@ -8,10 +8,10 @@ import {
     showTasks,
     hideTasks,
     setIndex
-} from "../../store/modals/actions";
-import ModalCreatePractice from "../modals/modal_practice";
+} from "../../../store/modals/actions";
+import ModalCreatePractice from "../../modals/modal_practice";
 import {connect} from "react-redux";
-import {setForGroupPractice,changeTaskString, setTheme,setDateFrom,setDateTo} from "../../store/practiceCreate/actions";
+import {setForGroupPractice,changeTaskString, setTheme,setDateFrom,setDateTo} from "../../../store/practiceCreate/actions";
 import {
     setCpu, setCpuInputDisabled, setCpuInputEnabled, setDDR,
     setDynamicCPU, setDynamicDDR,
@@ -19,7 +19,7 @@ import {
     setDynamicMotherBoard, setHDD, setMotherBoard,
     setQuantityDDR,
     setQuantityHdd, setSelectsDDRdisabled, setSelectsDDRenabled, setSelectsDisabled, setSelectsEnabled
-} from "../../store/emulatorCreate/actions";
+} from "../../../store/emulatorCreate/actions";
 import GroupsWithPractice from "./GroupsWithPractice";
 
 class TeacherPracticePage extends React.Component {

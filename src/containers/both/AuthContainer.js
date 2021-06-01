@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Auth from "../components/auth/Auth";
+import Auth from "../../components/auth/Auth";
 import {connect} from "react-redux";
-import {setEmail, setPassw,setAuthSuccess,setAuthBad} from "../store/auth/actions";
+import {setEmail, setPassw,setAuthSuccess,setAuthBad} from "../../store/auth/actions";
 import {bindActionCreators} from "redux";
-import {initList} from "../store/groups/actions";
+import {initList} from "../../store/groups/actions";
 
 class AuthContainer extends Component {
 

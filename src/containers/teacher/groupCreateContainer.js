@@ -1,8 +1,8 @@
 import React from "react";
-import FormGroupCreate from "../components/teacherpage/groupCreateForm";
+import FormGroupCreate from "../../components/teacher/teacherpage/groupCreateForm";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {addGroup, clearForm, setDescr, setTitle, setToken} from "../store/groups/actions";
+import {addGroup, clearForm, setDescr, setTitle, setToken} from "../../store/groups/actions";
 
 class GroupCreateContainer extends React.Component {
 

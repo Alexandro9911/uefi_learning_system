@@ -1,5 +1,5 @@
 import React from "react";
-import EmulatorFormCreate from "../components/EmulatorFormCreate/emulatorFormCreate";
+import EmulatorFormCreate from "../../components/teacher/EmulatorFormCreate/emulatorFormCreate";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {
@@ -19,8 +19,8 @@ import {
     setSelectsEnabled,
     setSelectsDDRdisabled,
     setSelectsDDRenabled
-} from "../store/emulatorCreate/actions";
-import {hideModalDownloading, showModalDownloading} from "../store/modals/actions";
+} from "../../store/emulatorCreate/actions";
+import {hideModalDownloading, showModalDownloading} from "../../store/modals/actions";
 
 class EmulatorFormContainer extends React.Component {
     constructor(props) {

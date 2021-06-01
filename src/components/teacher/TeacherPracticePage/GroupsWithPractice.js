@@ -1,7 +1,7 @@
 import React from "react";
-import Modal_tasks from "../modals/modal_tasks";
+import Modal_tasks from "../../modals/modal_tasks";
 import {connect} from "react-redux";
-import {setCurrentTasksGroup} from "../../store/groupspractice/actions";
+import {setCurrentTasksGroup} from "../../../store/groupspractice/actions";
 import {bindActionCreators} from "redux";
 class GroupsWithPractice extends React.Component {
     constructor(props) {

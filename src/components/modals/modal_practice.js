@@ -1,6 +1,6 @@
 import React from "react";
 import DynamicSelect from "../Elements/dynamicSelect";
-import EmulatorFormContainer from "../../containers/emulatorFormContainer";
+import EmulatorFormContainer from "../../containers/teacher/emulatorFormContainer";
 
 export default class ModalCreatePractice extends React.Component {
     constructor(props) {

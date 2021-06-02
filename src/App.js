@@ -13,6 +13,7 @@ import TeacherPageContainer from "./containers/teacher/TeacherPageContainer";
 import TeacherTestPage from "./components/teacher/teacherTestpage/teacherTestPage";
 import TeacherPracticePage from "./components/teacher/TeacherPracticePage/TeacherPracticePage";
 import PracticePageContainer from "./containers/student/practicepage/practicePageContainer";
+import AboutPracticePageContainer from "./containers/student/practicepage/AboutPracticePageContainer";
 
 function App() {
     return (
@@ -40,6 +41,9 @@ function App() {
                     </Route>
                     <Route path={'/user_page/practice_page'}>
                         <PracticePageContainer/>
+                    </Route>
+                    <Route path={'/user_page/practice_page/about_task'}>
+                        <AboutPracticePageContainer/>
                     </Route>
                     <Route path={"/"}>
                         <AuthContainer/>

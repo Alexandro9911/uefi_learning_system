@@ -13,6 +13,7 @@ import {
 import JoinGroup from "../../../components/student/userpage/joinGroup";
 import PracticePageContainer from "../practicepage/practicePageContainer";
 import {setStudentsPractice} from "../../../store/practice_student/actions";
+import AboutPracticePageContainer from "../practicepage/AboutPracticePageContainer";
 
 class UserpageContainer extends Component {
     constructor(props) {
@@ -72,6 +73,9 @@ class UserpageContainer extends Component {
                     <UserNavs/>
                 </div>
                 <Switch>
+                    <Route path={'/user_page/practice_page/about_task'}>
+                        <AboutPracticePageContainer/>
+                    </Route>
                     <Route path={'/user_page/practice_page'}>
                         <PracticePageContainer />
                     </Route>

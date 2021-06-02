@@ -8,7 +8,7 @@ export default class GroupList extends React.Component {
         let q = groups.length;
         if(q > 0) {
             const items = groups.map((group,i) =>
-                <div key={i} className="card card-body">
+                <div key={i} className="group_card">
                     <div>Группа: {group.title}</div>
                     <div>Токен: {group.token}</div>
                     <div>Описание: {group.descr}</div>

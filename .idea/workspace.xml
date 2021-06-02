@@ -1,35 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="added practice groups and tasks &#10;+ server script that creates emulator">
-      <change afterPath="$PROJECT_DIR$/src/Server Scripts/selectStudentPractice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/student/practicepage/practicePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/student/practicepage/practicePageContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/practice_student/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/practice_student/reducers.js" afterDir="false" />
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="refactoring + userpage actions">
+      <change afterPath="$PROJECT_DIR$/src/components/student/about_task_page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EmulatorFormCreate/MarksCriteriaForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/EmulatorFormCreate/MarksCriteriaForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EmulatorFormCreate/emulatorFormCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/EmulatorFormCreate/emulatorFormCreate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeacherPracticePage/GroupsWithPractice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/TeacherPracticePage/GroupsWithPractice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeacherPracticePage/TeacherPracticePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/TeacherPracticePage/TeacherPracticePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/modal_practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/modal_practice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navs/StudentNavs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navs/StudentNavs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/teacherTestpage/teacherTestPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/teacherTestPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/teacherpage/groupCreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupCreateForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/teacherpage/groupList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/teacherpage/teachergroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/teachergroups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/userpage/joinGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/userpage/joinGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/userpage/userListGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/userpage/userListGroups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AuthContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/both/AuthContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ExistingGroupsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/teacher/ExistingGroupsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MarksCriteriaFormContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/teacher/MarksCriteriaFormContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/RegistrationContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/both/RegistrationContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/TeacherPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/teacher/TeacherPageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/emulatorFormContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/teacher/emulatorFormContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/groupCreateContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/teacher/groupCreateContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/userpageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/student/practicepage/practicePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/practicepage/practicePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/student/userpage/userListGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/userpage/userListGroups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/practice_student/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/practice_student/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +99,8 @@
       <workItem from="1622491398452" duration="151000" />
       <workItem from="1622491672523" duration="13569000" />
       <workItem from="1622544164385" duration="26158000" />
-      <workItem from="1622579668829" duration="9073000" />
+      <workItem from="1622579668829" duration="9812000" />
+      <workItem from="1622623303348" duration="2120000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -176,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622571284085</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactoring + userpage actions">
+      <created>1622588920845</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622588920845</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +191,7 @@
     <MESSAGE value="added some dynamics selects to emulatorForm" />
     <MESSAGE value="hdd selection fixed in emulatorForm" />
     <MESSAGE value="added practice groups and tasks &#10;+ server script that creates emulator" />
-    <option name="LAST_COMMIT_MESSAGE" value="added practice groups and tasks &#10;+ server script that creates emulator" />
+    <MESSAGE value="refactoring + userpage actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring + userpage actions" />
   </component>
 </project>

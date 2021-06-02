@@ -9,7 +9,7 @@ export default class UserListGroups extends React.Component {
         if(q > 0) {
             let items;
             items = Object.values(this.props.userGroups).map((group, i) =>
-                <div key={i} className="card card-body">
+                <div key={i} className="group_card">
                     <div>Группа: {group.group_title}</div>
                     <div>Описание: {group.group_descr}</div>
                     <div>Владелец: {group.ovner_lastname} {group.ovner_firstname} {group.ovner_middlename}</div>

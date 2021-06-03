@@ -14,6 +14,8 @@ import JoinGroup from "../../../components/student/userpage/joinGroup";
 import PracticePageContainer from "../practicepage/practicePageContainer";
 import {setStudentsPractice} from "../../../store/practice_student/actions";
 import AboutPracticePageContainer from "../practicepage/AboutPracticePageContainer";
+import EmulatorContainer from "../../emulator/emulatorContainer";
+import MainBar from "../../../components/student/userpage/mainBar";
 
 class UserpageContainer extends Component {
     constructor(props) {
@@ -61,30 +63,48 @@ class UserpageContainer extends Component {
             this.props.setListPractice(JSON.parse(JSON.stringify(answ)));
     }
 
-    showFio() {
-        return this.props.fio;
-    }
-
     render() {
-        return (
-            <div className="grid-container-user">
-                <div className="mainbar">
-                    <h6>{this.showFio()}</h6>
-                    <UserNavs/>
-                </div>
+        if(this.props.emulator_status){
+            return (
                 <Switch>
                     <Route path={'/user_page/practice_page/about_task'}>
                         <AboutPracticePageContainer/>
                     </Route>
                     <Route path={'/user_page/practice_page'}>
-                        <PracticePageContainer />
+                        <PracticePageContainer/>
                     </Route>
                     <Route path={'/user_page/join_group'}>
                         <JoinGroup myId={this.props.id} userGroups={this.props.userGroups}/>
                     </Route>
+                    <Route path={'/user_page/emulator'}>
+                        <EmulatorContainer/>
+                    </Route>
                 </Switch>
-            </div>
-        );
+            )
+        } else {
+            return (
+                <div className="grid-container-user">
+                    <MainBar
+                        emulator_status={this.props.emulator_status}
+                        fio={this.props.fio}
+                    />
+                    <Switch>
+                        <Route path={'/user_page/practice_page/about_task'}>
+                            <AboutPracticePageContainer/>
+                        </Route>
+                        <Route path={'/user_page/practice_page'}>
+                            <PracticePageContainer/>
+                        </Route>
+                        <Route path={'/user_page/join_group'}>
+                            <JoinGroup myId={this.props.id} userGroups={this.props.userGroups}/>
+                        </Route>
+                        <Route path={'/user_page/emulator'}>
+                            <EmulatorContainer/>
+                        </Route>
+                    </Switch>
+                </div>
+            );
+        }
     }
 }
 
@@ -96,7 +116,9 @@ const mapStateToProps = (state) => {
         fio: state.auth.fio,
         userGroups:  state.useractivity.groups,
         userTests: state.useractivity.tests,
-        userPractice: state.useractivity.practice
+        userPractice: state.useractivity.practice,
+        emulator_status: state.useractivity.emulator_status
+        // emul
     }
 }
 
@@ -107,6 +129,8 @@ const mapDispatchToProps = (dispatch) => {
         setUserPractice: bindActionCreators(setUserPractice,dispatch),
         setUserTests: bindActionCreators(setUserTests,dispatch),
         setListPractice: bindActionCreators(setStudentsPractice,dispatch)
+
+        // emul
     }
 }
 

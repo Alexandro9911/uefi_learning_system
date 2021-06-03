@@ -2,7 +2,8 @@ import React from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {setStudentsPractice,setCurrentPractice} from "../../../store/practice_student/actions";
-import AboutTaskRage from "../../../components/student/about_task_page";
+import AboutTaskRage from "../../../components/student/userpage/about_task_page";
+import {setEmulatorClosed, setEmulatorStarted} from "../../../store/userpage/actions";
 
 class AboutPracticePageContainer extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class AboutPracticePageContainer extends React.Component {
         return(
             <AboutTaskRage
                 practice={this.props.current_practice}
+                setEmulatorStarted={this.props.setEmulatorStarted}
             />
         );
     }
@@ -28,7 +30,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps =(dispatch) => {
     return {
         setListPractice: bindActionCreators(setStudentsPractice,dispatch),
-        setCurrentPractice: bindActionCreators(setCurrentPractice,dispatch)
+        setCurrentPractice: bindActionCreators(setCurrentPractice,dispatch),
+        setEmulatorStarted: bindActionCreators(setEmulatorStarted, dispatch)
     }
 }
 

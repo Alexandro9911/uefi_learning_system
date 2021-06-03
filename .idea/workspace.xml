@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="refactoring + userpage actions">
-      <change afterPath="$PROJECT_DIR$/src/components/student/about_task_page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" afterDir="false" />
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="about practice page">
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/student/userpage/about_task_page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/student/userpage/mainBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/student/practicepage/practicePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/practicepage/practicePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/student/userpage/userListGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/userpage/userListGroups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navs/mainNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navs/mainNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/student/about_task_page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/practice_student/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/practice_student/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/userpage/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userpage/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/userpage/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userpage/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +63,11 @@
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\navs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\student\userpage" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\containers\student\userpage" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\student" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\teacher" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\containers\student" />
-      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\containers\teacher" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -100,7 +103,8 @@
       <workItem from="1622491672523" duration="13569000" />
       <workItem from="1622544164385" duration="26158000" />
       <workItem from="1622579668829" duration="9812000" />
-      <workItem from="1622623303348" duration="2120000" />
+      <workItem from="1622623303348" duration="2957000" />
+      <workItem from="1622722313748" duration="3638000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -165,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622588920845</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="about practice page">
+      <created>1622625789949</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622625789949</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +203,7 @@
     <MESSAGE value="hdd selection fixed in emulatorForm" />
     <MESSAGE value="added practice groups and tasks &#10;+ server script that creates emulator" />
     <MESSAGE value="refactoring + userpage actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring + userpage actions" />
+    <MESSAGE value="about practice page" />
+    <option name="LAST_COMMIT_MESSAGE" value="about practice page" />
   </component>
 </project>

@@ -14,6 +14,8 @@ import TeacherTestPage from "./components/teacher/teacherTestpage/teacherTestPag
 import TeacherPracticePage from "./components/teacher/TeacherPracticePage/TeacherPracticePage";
 import PracticePageContainer from "./containers/student/practicepage/practicePageContainer";
 import AboutPracticePageContainer from "./containers/student/practicepage/AboutPracticePageContainer";
+import EmulatorPage from "./components/emulator/EmulatorPage";
+import EmulatorContainer from "./containers/emulator/emulatorContainer";
 
 function App() {
     return (
@@ -44,6 +46,9 @@ function App() {
                     </Route>
                     <Route path={'/user_page/practice_page/about_task'}>
                         <AboutPracticePageContainer/>
+                    </Route>
+                    <Route path={'/user_page/emulator'}>
+                        <EmulatorContainer/>
                     </Route>
                     <Route path={"/"}>
                         <AuthContainer/>

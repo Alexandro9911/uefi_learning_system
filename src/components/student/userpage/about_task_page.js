@@ -24,6 +24,7 @@ export default class AboutTaskRage extends React.Component {
 
     async onClickHandler(e) {
         this.props.setEmulatorStarted();
+
     }
 
     render() {

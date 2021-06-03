@@ -19,7 +19,6 @@ export default class Modal_dowloading extends React.Component {
                         </div>
                     </div>
                     <span>Loading...</span>
-                    <button onClick={this.onClickHandler}>ок</button>
                 </div>
             )
         } else {

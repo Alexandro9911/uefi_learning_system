@@ -8,6 +8,19 @@ export const SHOW_MODAL_TASKS = 'SHOW_MODAL_TASKS';
 export const HIDE_MODAL_TASKS = 'HIDE_MODAL_TASKS';
 export const SET_INDEX_GROUP = 'SET_INDEX_GROUP';
 
+export const SHOW_ALERT_MODAL = 'SHOW_ALERT_MODAL';
+export const HIDE_ALERT_MODAL = 'HIDE_ALERT_MODAL';
+
+export const showAlertModal = () => ({
+   type: SHOW_ALERT_MODAL,
+   payload: true
+});
+
+export const hideAlertModal = () => ({
+   type: HIDE_ALERT_MODAL,
+   payload: false
+});
+
 export const showTasks = () =>({
     type: SHOW_MODAL_TASKS,
     payload: true

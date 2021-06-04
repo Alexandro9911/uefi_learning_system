@@ -23,6 +23,8 @@ export default class AboutTaskRage extends React.Component {
     // emulator_id(pin):'2'
 
     async onClickHandler(e) {
+        let emulator_str = this.props.practice.emulator_string;
+        this.props.initEmulator(emulator_str);
         this.props.setEmulatorStarted();
 
     }
@@ -35,6 +37,7 @@ export default class AboutTaskRage extends React.Component {
                 <div>Название: {this.props.practice.theme}</div>
                 <div>Текст задания:</div>
                 <div>{this.props.practice.task}</div>
+                <div>{this.props.practice.emulator_string}</div>
                 <Link onClick={this.onClickHandler} to={'/user_page/emulator'}
                       className="btn btn-sm btn-outline-primary">Запустить эмулятор</Link>
             </div>

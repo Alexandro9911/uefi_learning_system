@@ -1,4 +1,6 @@
 import React from "react";
+import InfoBarContainer from "../../containers/emulator/infoBarContainer";
+
 
 export default class EmulatorPage extends React.Component {
     constructor(props) {
@@ -6,8 +8,13 @@ export default class EmulatorPage extends React.Component {
     }
 
     render() {
+
         return (
-            <div>This is emulator page</div>
+            <div className="emulator_container">
+                <div className="background_emulator">
+                    <InfoBarContainer/>
+                </div>
+            </div>
         )
     }
 }

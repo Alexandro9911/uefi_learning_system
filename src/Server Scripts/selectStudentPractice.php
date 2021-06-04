@@ -25,11 +25,15 @@ if(isset($_POST['myid'])) {
                task,
                date_from,
                date_to,
-               emulator_id
+               emulator_id,
+               pr.emulator_string as emulator_string 
         from practice 
         JOIN `groups` _group on _group.id = practice.for_group
         JOIN member_list members on members.group_id = _group.id
         inner join users u on _group.ovner = u.id
+            
+        join practice_results pr on practice.id = pr.practice_id
+        
         WHERE members.user_id = '$myid'";
 
         $res = mysqli_query($connection, $sql);

@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="ready to implement emulator">
-      <change afterPath="$PROJECT_DIR$/src/Server Scripts/finallizeCreating.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/557a07fb-47b2-41f3-ae51-ae12b0dc5dd0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/557a07fb-47b2-41f3-ae51-ae12b0dc5dd0.xml" afterDir="false" />
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="bug fix">
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/emulatorModals/dateTimeModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/InfoBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/TimerBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/system_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/infoBarContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/emulator/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/emulator/reducers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/emulatorModals/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/emulatorModals/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/modal_dowloading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/modal_dowloading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/modal_practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/modal_practice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server Scripts/selectStudentPractice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/selectStudentPractice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/student/userpage/about_task_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/userpage/about_task_page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modals/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modals/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modals/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modals/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/alertModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Server Scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/emulator/infoBar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -56,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\emulator\infoBar" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\Server Scripts" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\userpage" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\navs" />
@@ -103,7 +111,8 @@
       <workItem from="1622579668829" duration="9812000" />
       <workItem from="1622623303348" duration="2957000" />
       <workItem from="1622722313748" duration="12216000" />
-      <workItem from="1622742303875" duration="6295000" />
+      <workItem from="1622742303875" duration="8173000" />
+      <workItem from="1622803588716" duration="13385000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -182,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622726014743</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ready to implement emulator + some features">
+      <created>1622748948222</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622748948222</updated>
+    </task>
+    <task id="LOCAL-00013" summary="bug fix">
+      <created>1622749080713</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622749080713</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +234,8 @@
     <MESSAGE value="refactoring + userpage actions" />
     <MESSAGE value="about practice page" />
     <MESSAGE value="ready to implement emulator" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to implement emulator" />
+    <MESSAGE value="ready to implement emulator + some features" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
 </project>

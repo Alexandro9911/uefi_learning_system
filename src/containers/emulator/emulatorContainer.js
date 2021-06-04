@@ -16,6 +16,7 @@ class EmulatorContainer extends React.Component {
             emulator_objecct={this.props.emulator_object}
             toEzMode={this.props.toEzMode}
             toAdvancedMode={this.props.toAdvancedMode}
+            emulator_status={this.props.emulator_status}
           />
         );
     }
@@ -24,6 +25,7 @@ class EmulatorContainer extends React.Component {
 const mapStateToProps = (state) =>{
     return{
         emulator_object: state.emulator.emulator_object,
+        emulator_status: state.emulator.advanced_mode
     }
 }
 

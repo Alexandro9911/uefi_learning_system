@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="bug fix">
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/emulatorModals/dateTimeModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/InfoBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/TimerBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/system_info.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/infoBarContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/emulator/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/emulator/reducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/emulatorModals/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/emulatorModals/reducers.js" afterDir="false" />
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="emul ez mode dev">
+      <change afterPath="$PROJECT_DIR$/src/components/Elements/progressBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedModePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/bootMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/ezModePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/monitorMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/ezModeContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server Scripts/selectStudentPractice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/selectStudentPractice.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/student/userpage/about_task_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/student/userpage/about_task_page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/practicepage/AboutPracticePageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/emulator/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/emulator/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +108,8 @@
       <workItem from="1622623303348" duration="2957000" />
       <workItem from="1622722313748" duration="12216000" />
       <workItem from="1622742303875" duration="8173000" />
-      <workItem from="1622803588716" duration="13385000" />
+      <workItem from="1622803588716" duration="13645000" />
+      <workItem from="1622829115316" duration="7915000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -205,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622749080713</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="emul ez mode dev">
+      <created>1622818970135</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622818970135</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +240,7 @@
     <MESSAGE value="ready to implement emulator" />
     <MESSAGE value="ready to implement emulator + some features" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="emul ez mode dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="emul ez mode dev" />
   </component>
 </project>

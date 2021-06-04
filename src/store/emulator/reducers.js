@@ -3,16 +3,23 @@ import {
     CHANGE_TO_ADVANCED_MODE,
     CHANGE_TO_EZ_MODE,
     SET_TIME_SYSTEM,
-    SET_DATE_SYSTEM
+    SET_DATE_SYSTEM,
+    SET_TEMPERATURE
 } from "./actions";
 
 const initialState = {
     emulator_object: {},
-    advanced_mode: false
+    advanced_mode: false,
+    temperature : 0
 }
 
 export const emulatorRegucer = (state = initialState, action) =>{
     switch (action.type) {
+        case SET_TEMPERATURE:
+            return {
+                ...state,
+                temperature: action.payload
+            }
         case INIT_EMULATOR_STORE:
             return {
                 ...state,

@@ -10,9 +10,12 @@ export default class EzModePage extends React.Component {
     render() {
         return (
             <div>
-                <MonitorMenu temperature={this.props.temperature}
-                             setTemp={this.props.setTemp}/>
-                <BootMenu/>
+                <MonitorMenu temperature_cpu={this.props.temperature_cpu}
+                             setTemp={this.props.setTempCpu}
+                             temperature_mb={this.props.temperature_mb}
+                             setTempMb={this.props.setTempMb}
+                />
+                <BootMenu emulator_object={this.props.emulator_object}/>
             </div>
         )
     }

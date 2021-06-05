@@ -1,4 +1,5 @@
 import React from "react";
+import BootPriority from "./BootPriority";
 
 export default class BootMenu extends React.Component {
     constructor(props) {
@@ -7,8 +8,9 @@ export default class BootMenu extends React.Component {
     }
 
     render() {
+        let listHdd = this.props.emulator_object.listHdd
         return(
-            <div>boot menu</div>
+            <BootPriority listHdd={listHdd}/>
         )
     }
 }

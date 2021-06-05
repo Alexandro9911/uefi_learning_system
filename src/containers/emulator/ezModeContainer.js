@@ -2,8 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import EzModePage from "../../components/emulator/ezmode/ezModePage";
 import {bindActionCreators} from "redux";
-import {setDateSystem} from "../../store/emulator/actions";
-import {setTemp} from "../../store/emulator/actions";
+import {setDateSystem, setTempCpu,setTempMb} from "../../store/emulator/actions";
 
 class EzModeContainer extends React.Component {
     constructor(props) {
@@ -17,8 +16,10 @@ class EzModeContainer extends React.Component {
                 <div>
                     <EzModePage
                         emulator_object={this.props.emulator_object}
-                        temperature={this.props.temperature}
-                        setTemp={this.props.setTemp}
+                        temperature_cpu={this.props.temperature_cpu}
+                        setTempCpu={this.props.setTempCpu}
+                        temperature_mb={this.props.temperature_mb}
+                        setTempMb={this.props.setTempMb}
                     />
                 </div>
             )
@@ -31,14 +32,16 @@ class EzModeContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         emulator_object: state.emulator.emulator_object,
-        temperature: state.emulator.temperature
+        temperature_cpu: state.emulator.temperature_cpu,
+        temperature_mb: state.emulator.temperature_mb,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         setDate: bindActionCreators(setDateSystem,dispatch),
-        setTemp: bindActionCreators(setTemp,dispatch)
+        setTempCpu: bindActionCreators(setTempCpu,dispatch),
+        setTempMb: bindActionCreators(setTempMb,dispatch)
     }
 }
 

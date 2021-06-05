@@ -351,21 +351,24 @@ body{
 .flex_monitor {
   display: flex;
   gap: 3%;
-  margin: 5%;
-  padding: 3%;
+  padding: 1%;
   width: 100%;
   height: auto;
 }
 
+.flex_progress_label{
+  display: flex;
+  gap: 80px;
+}
 .line_progress_wrapper{
-  height: 55px;
+  height: 35px;
   width: 200px;
   border: #1c919f solid 2px;
   background-color: #7c7c7c;
 }
 
 .line_progress_entity {
-  height: 51px;
+  height: 31px;
   background-color: #39e013;
   width: 20%;
 

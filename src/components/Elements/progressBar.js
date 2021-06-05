@@ -6,7 +6,7 @@ export default class ProgressBar extends React.Component {
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
-        const elem = document.getElementById("temp");
+        const elem = document.getElementById(this.props.id);
         let min = this.props.min;
         let max = this.props.max;
         let curr = min + this.props.current;
@@ -25,9 +25,18 @@ export default class ProgressBar extends React.Component {
 
     render() {
         return (
-            <div className="line_progress_wrapper">
-                <div className="line_progress_entity" id='temp'/>
+            <div>
+                <div className="flex_progress_label">
+                    <div>{this.props.text}</div>
+                    <div className="text-muted">
+                        {this.props.current} °C / {this.props.current * 9 / 5 + 32} °F
+                    </div>
+                </div>
+                <div className="line_progress_wrapper">
+                    <div className="line_progress_entity" id={this.props.id}/>
+                </div>
             </div>
+
         )
     }
 }

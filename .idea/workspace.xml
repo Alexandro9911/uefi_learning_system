@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="emul ez mode dev">
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/BootPriority.js" afterDir="false" />
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="in ezmode created boot menu">
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedNavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/advancedPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/aiTweakerPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/bootPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/mainPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/monitorPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toolsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/advancedPageContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/aiTweakerContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/bootContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/mainPageContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/monitorContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/toolsContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/hdd128.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elements/progressBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/progressBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedModePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedModePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/BootPriority.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/BootPriority.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/bootMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/bootMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/ezModePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/ezModePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/monitorMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/monitorMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/infoBar/InfoBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/InfoBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/infoBar/system_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/system_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/emulator/ezModeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/ezModeContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/infoBarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/infoBarContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/emulator/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/emulator/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/reducers.js" afterDir="false" />
     </list>
@@ -46,7 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/emulator/ezmode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -58,18 +76,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\resources" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\emulator\ezmode" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\emulator\infoBar" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\Server Scripts" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\userpage" />
-      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\navs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\resources" />
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src" />
+      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\public" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\student\userpage" />
       <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\containers\student\userpage" />
-      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\student" />
-      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\components\teacher" />
-      <recent name="C:\Users\Alexa\PhpstormProjects\redux_hello\src\containers\student" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -109,7 +127,8 @@
       <workItem from="1622722313748" duration="12216000" />
       <workItem from="1622742303875" duration="8173000" />
       <workItem from="1622803588716" duration="13645000" />
-      <workItem from="1622829115316" duration="12885000" />
+      <workItem from="1622829115316" duration="14119000" />
+      <workItem from="1623060578864" duration="19265000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -216,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622837291724</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="in ezmode created boot menu">
+      <created>1622899395614</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622899395614</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +274,7 @@
     <MESSAGE value="ready to implement emulator + some features" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="emul ez mode dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="emul ez mode dev" />
+    <MESSAGE value="in ezmode created boot menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="in ezmode created boot menu" />
   </component>
 </project>

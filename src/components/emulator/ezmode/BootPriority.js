@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
+import logo from "../../../resources/hdd128.png"
 const getItems = list =>
     Array.from({ length: list.length }, (v, k) => k).map(k => ({
         id: `item-${k}`,
         content: `${list[k].system_name}`,
+        unic_id: `${list[k].id}`
     }));
 
 const reorder = (list, startIndex, endIndex) => {
@@ -20,6 +21,7 @@ const grid = 35;
 const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nicer
     userSelect: 'none',
+    alignContent: "center",
     width: '200px',
     height: '200px',
     margin: `0 ${grid}px 0 0`,
@@ -32,6 +34,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 });
 
 const getListStyle = isDraggingOver => ({
+
     background: isDraggingOver ? 'lightblue' : '#404040',
     display: 'flex',
     padding: grid,
@@ -58,10 +61,19 @@ class BootPriority extends Component {
             result.source.index,
             result.destination.index
         );
-
         this.setState({
             items,
         });
+        let array_items = Object.values(this.state.items)
+        let str_priority = "";
+        for (let i = 0; i < array_items.length; i++) {
+            if (i === array_items.length - 1) {
+                str_priority += array_items[i].id + "|" + array_items[i].unic_id
+            } else {
+                str_priority += array_items[i].id + "|" + array_items[i].unic_id + "#"
+            }
+        }
+        this.props.setBootPriority(str_priority);
     }
 
     // Normally you would want to split things out into separate components.
@@ -90,7 +102,11 @@ class BootPriority extends Component {
                                                 provided.draggableProps.style
                                             )}
                                         >
-                                            {item.content}
+                                           <div className="text-center">
+                                               <br/>
+                                               <img src={logo} alt={require('../../../resources/hdd128.png')}/>
+                                               {item.content}
+                                           </div>
                                         </div>
                                     )}
                                 </Draggable>

@@ -13,7 +13,10 @@ class AdvancedModeContainer extends React.Component {
         if(this.props.emulator_status){
             return (
                 <div>
-                    <AdvancedModePage emulator_object={this.props.emulator_object}/>
+                    <AdvancedModePage
+                        emulator_object={this.props.emulator_object}
+                        current_select={this.props.current_select}
+                    />
                 </div>
             )
         } else {
@@ -25,7 +28,8 @@ class AdvancedModeContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        emulator_object: state.emulator.emulator_object
+        emulator_object: state.emulator.emulator_object,
+        current_select: state.emulator.current_select
     }
 }
 

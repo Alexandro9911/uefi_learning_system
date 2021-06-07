@@ -5,6 +5,7 @@ import {bindActionCreators} from "redux";
 import {changeToAdvancedMode, changeToEzMode,setDateSystem,setTimeSystem} from "../../store/emulator/actions";
 import {showModalDateTime,hideModalDateTime} from "../../store/emulatorModals/actions";
 import DateTimeModal from "../../components/emulator/emulatorModals/dateTimeModal";
+import EzModePage from "../../components/emulator/ezmode/ezModePage";
 
 class InfoBarContainer extends React.Component {
     constructor(props) {
@@ -32,6 +33,8 @@ class InfoBarContainer extends React.Component {
                     showModalDateTime={this.props.showModalDateTime}
                     modal_date_time={this.props.modal_date_time}
                     emulator_mode={this.props.emulator_mode}
+                    total_mem={this.props.total_mem}
+                    cpu_speed={this.props.cpu_speed}
                 />
             </div>
         )
@@ -43,7 +46,9 @@ const mapStateToProps = (state) =>{
     return{
         emulator_object: state.emulator.emulator_object,
         modal_date_time: state.emulatormodals.modal_date_time,
-        emulator_mode: state.emulator.advanced_mode
+        emulator_mode: state.emulator.advanced_mode,
+        total_mem: state.emulator.total_mem,
+        cpu_speed: state.emulator.cpu_speed
     }
 }
 

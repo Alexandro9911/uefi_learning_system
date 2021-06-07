@@ -1,6 +1,7 @@
 import React from "react";
 import TimerBlock from "./TimerBlock";
 import SystemInfo from "./system_info";
+import EzModePage from "../ezmode/ezModePage";
 
 export default class InfoBar extends React.Component {
     constructor(props) {
@@ -40,7 +41,10 @@ export default class InfoBar extends React.Component {
                     modal_date_time={this.props.modal_date_time}
                 />
                 <div>
-                    <SystemInfo emulator={this.props.emulator_object}/>
+                    <SystemInfo emulator={this.props.emulator_object}
+                                total_mem={this.props.total_mem}
+                                cpu_speed={this.props.cpu_speed}
+                    />
                 </div>
                 <div>
                     <div className="simple-button" onClick={this.onChangeModeHandler}>{name}</div>

@@ -14,6 +14,9 @@ export default class EzModePage extends React.Component {
                              setTemp={this.props.setTempCpu}
                              temperature_mb={this.props.temperature_mb}
                              setTempMb={this.props.setTempMb}
+                             total_mem={this.props.total_mem}
+                             cpu_speed={this.props.cpu_speed}
+                             cpu_fan_speed={this.props.cpu_fan_speed}
                 />
                 <BootMenu emulator_object={this.props.emulator_object}/>
             </div>

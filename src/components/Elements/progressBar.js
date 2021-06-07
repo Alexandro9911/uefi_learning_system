@@ -23,20 +23,56 @@ export default class ProgressBar extends React.Component {
         }
     }
 
+    // mode 0 - temperature
+    // mode 1 - voltage
+    // mode 2 - fan speed
     render() {
-        return (
-            <div>
-                <div className="flex_progress_label">
-                    <div>{this.props.text}</div>
-                    <div className="text-muted">
-                        {this.props.current} °C / {this.props.current * 9 / 5 + 32} °F
+        switch (this.props.mode) {
+            case 0 :
+                return (
+                    <div>
+                        <div className="flex_progress_label">
+                            <div>{this.props.text}</div>
+                            <div className="text-muted">
+                                {this.props.current} °C / {this.props.current * 9 / 5 + 32} °F
+                            </div>
+                        </div>
+                        <div className="line_progress_wrapper">
+                            <div className="line_progress_entity" id={this.props.id}/>
+                        </div>
                     </div>
-                </div>
-                <div className="line_progress_wrapper">
-                    <div className="line_progress_entity" id={this.props.id}/>
-                </div>
-            </div>
 
-        )
+                )
+            case 1:
+                return (
+                    <div>
+                        <div className="flex_progress_label">
+                            <div>{this.props.text}</div>
+                            <div className="text-muted">
+                                {this.props.current} V
+                            </div>
+                        </div>
+                        <div className="line_progress_wrapper">
+                            <div className="line_progress_entity" id={this.props.id}/>
+                        </div>
+                    </div>
+
+                )
+            case 2:
+                return (
+                    <div>
+                        <div className="flex_progress_label">
+                            <div>{this.props.text}</div>
+                            <div className="text-muted">
+                                {this.props.current} RPM
+                            </div>
+                        </div>
+                        <div className="line_progress_wrapper">
+                            <div className="line_progress_entity" id={this.props.id}/>
+                        </div>
+                    </div>
+
+                )
+        }
     }
 }

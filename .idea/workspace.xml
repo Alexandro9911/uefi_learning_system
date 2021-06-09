@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="in ezmode created boot menu">
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedNavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/advancedPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/aiTweakerPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/bootPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/mainPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/monitorPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toolsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/advancedPageContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/aiTweakerContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/bootContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/mainPageContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/monitorContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/toolsContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/hdd128.png" afterDir="false" />
+    <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="advanced page dev">
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/bootTools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/cpuSettings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/memorySettings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/powerManagement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elements/progressBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/progressBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedModePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedModePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/BootPriority.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/BootPriority.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/bootMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/bootMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/ezModePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/ezModePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/emulator/ezmode/monitorMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/ezmode/monitorMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/EmulatorPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/advancedPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/advancedPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/aiTweakerPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/aiTweakerPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/bootPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/bootPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/emulator/infoBar/InfoBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/InfoBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/emulator/infoBar/system_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/infoBar/system_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/advancedPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/advancedPageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/aiTweakerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/aiTweakerContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/emulator/ezModeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/ezModeContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/emulator/infoBarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/infoBarContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/emulator/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/emulator/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/reducers.js" afterDir="false" />
     </list>
@@ -128,7 +114,8 @@
       <workItem from="1622742303875" duration="8173000" />
       <workItem from="1622803588716" duration="13645000" />
       <workItem from="1622829115316" duration="14119000" />
-      <workItem from="1623060578864" duration="19265000" />
+      <workItem from="1623060578864" duration="20218000" />
+      <workItem from="1623161626042" duration="7113000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -242,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622899395614</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="advanced page dev">
+      <created>1623082902640</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1623082902640</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +269,7 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="emul ez mode dev" />
     <MESSAGE value="in ezmode created boot menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="in ezmode created boot menu" />
+    <MESSAGE value="advanced page dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="advanced page dev" />
   </component>
 </project>

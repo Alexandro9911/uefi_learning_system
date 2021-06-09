@@ -16,11 +16,29 @@ export const SET_TEMPERATURE = 'SET_TEMPERATURE';
 export const SET_CPU_FAN_SPEED = 'SET_CPU_FAN_SPEED';
 
 export const SET_TOTAL_MEM = 'SET_TOTAL_MEM';
+export const SET_BUS_SPEED ='SET_BUS_SPEED';
+export const SET_MULTIPLAYER_STR ='SET_MULTIPLAYER_STR';
 
+export const SET_PAGE_ADVANCED_ACCORDION = 'SET_PAGE_ADVANCED_ACCORDION';
+
+export const setPageAdvancedAccordion = (selected) => ({
+    type: SET_PAGE_ADVANCED_ACCORDION,
+    payload: selected
+});
+
+export const setMultiplayerStr = (value) => ({
+   type: SET_MULTIPLAYER_STR,
+   payload: value
+});
+
+export const setBusSpeed = (value) => ({
+    type: SET_BUS_SPEED,
+    payload: value
+});
 export const setTotalMem = (value) => ({
     type: SET_TOTAL_MEM,
     payload: value
-})
+});
 
 export const setCPUtemperature = (value) => ({
     type: SET_TEMPERATURE,

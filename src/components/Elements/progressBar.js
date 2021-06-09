@@ -23,6 +23,24 @@ export default class ProgressBar extends React.Component {
         }
     }
 
+    componentDidMount() {
+        const elem = document.getElementById(this.props.id);
+        let min = this.props.min;
+        let max = this.props.max;
+        let curr = min + this.props.current;
+        let w = curr;
+        if (w >= 90) {
+            elem.style.background = "#e01313"
+        } else {
+            elem.style.background = "#39e013"
+        }
+        w = (+curr * 100) / +max;
+        if (w <= max && w >= min) {
+            w = (+curr * 100) / +max;
+            elem.style.width = w + '%';
+        }
+    }
+
     // mode 0 - temperature
     // mode 1 - voltage
     // mode 2 - fan speed

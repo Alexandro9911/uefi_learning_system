@@ -9,6 +9,8 @@ export default class EmulatorPage extends React.Component {
         super(props);
     }
 
+
+
     render() {
         return (
             <div className="emulator_container">

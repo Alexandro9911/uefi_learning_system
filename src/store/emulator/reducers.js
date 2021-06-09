@@ -11,13 +11,16 @@ import {
     SET_CPU_SPEED,
     SET_CPU_FAN_SPEED,
     SET_TEMPERATURE,
-    SET_TOTAL_MEM
+    SET_TOTAL_MEM,
+    SET_BUS_SPEED,
+    SET_MULTIPLAYER_STR,
+    SET_PAGE_ADVANCED_ACCORDION
 } from "./actions";
 
 const initialState = {
-    emulator_object: {},
+    emulator_object: {}, //  это начальные значения
 
-    temperature_cpu : 30,
+    temperature_cpu : 30, //  тут идут значения которые устанавливает пользователь в ходе работы.
     temperature_mb: 23,
     cpu_speed: 0,
     bus_speed: 0,
@@ -31,12 +34,28 @@ const initialState = {
     cpu_fan_speed: 0,
     total_mem: 0,
 
-    advanced_mode: false,
-    current_select: 'main'
+    advanced_mode: false,  // значения для управления окнами ( системные)
+    current_select: 'main',
+    page_advanced_accordion: 'none'
 }
 
 export const emulatorRegucer = (state = initialState, action) =>{
     switch (action.type) {
+        case SET_PAGE_ADVANCED_ACCORDION:
+            return {
+                ...state,
+                page_advanced_accordion: action.payload
+            }
+        case SET_BUS_SPEED:
+            return {
+                ...state,
+                bus_speed: action.payload
+            }
+        case SET_MULTIPLAYER_STR:
+            return {
+                ...state,
+                multiplayer_str: action.payload
+            }
         case SET_TOTAL_MEM:
             return {
                 ...state,

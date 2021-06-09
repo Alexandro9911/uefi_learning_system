@@ -7,7 +7,7 @@ import {
 } from "../../store/emulator/actions";
 import {bindActionCreators} from "redux";
 
-import {setCPUfreq, setCPUtemperature, setCPUfanSpeed, setTotalMem} from "../../store/emulator/actions";
+import {setCPUfreq, setCPUtemperature, setCPUfanSpeed, setTotalMem,setBusSpeed,setMultiplayerStr} from "../../store/emulator/actions";
 
 class EmulatorContainer extends React.Component {
     constructor(props) {
@@ -33,12 +33,15 @@ class EmulatorContainer extends React.Component {
         let d = +base_freq * mult;
         return parseInt(d, 10);
     }
-
     componentDidMount() {
-
         let totalMem = this.countMem(this.props.emulator_object.listDdr);
         let speed = this.getCPUspeed(this.props.emulator_object.cpu.multiplayer_by_core, this.props.emulator_object.cpu.bus_speed)
+
+        this.props.setBusSpeed(+this.props.emulator_object.cpu.bus_speed);
+        this.props.setMultiplayerStr(this.props.emulator_object.cpu.multiplayer_by_core);
+
         this.props.setCPUfreq(speed);
+
         // Math.floor(num * 100) / 100
         let x = speed / 1000;
         x = Math.floor(x * 100) / 100
@@ -65,6 +68,7 @@ class EmulatorContainer extends React.Component {
                 toEzMode={this.props.toEzMode}
                 toAdvancedMode={this.props.toAdvancedMode}
                 emulator_status={this.props.emulator_status}
+                bus={this.props.bus_speed}
             />
         );
     }
@@ -74,6 +78,8 @@ const mapStateToProps = (state) => {
     return {
         emulator_object: state.emulator.emulator_object,
         emulator_status: state.emulator.advanced_mode,
+        bus_speed: state.emulator.bus_speed,
+        multiplayer_str: state.emulator.multiplayer_str
     }
 }
 
@@ -84,7 +90,9 @@ const mapDispatchToProps = (dispatch) => {
         setCPUfreq: bindActionCreators(setCPUfreq, dispatch),
         setCPUfanSpeed: bindActionCreators(setCPUfanSpeed, dispatch),
         setCPUtemperature: bindActionCreators(setCPUtemperature, dispatch),
-        setTotalMem: bindActionCreators(setTotalMem, dispatch)
+        setTotalMem: bindActionCreators(setTotalMem, dispatch),
+        setBusSpeed: bindActionCreators(setBusSpeed,dispatch),
+        setMultiplayerStr: bindActionCreators(setMultiplayerStr,dispatch)
     }
 }
 

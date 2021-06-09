@@ -11,7 +11,8 @@ export default class InfoBar extends React.Component {
         this.titleHandler = this.titleHandler.bind(this);
     }
 
-    onChangeModeHandler() {
+    onChangeModeHandler(e) {
+        e.preventDefault();
         if(this.props.emulator_mode){
             this.props.toEzMode()
         } else {

@@ -34,12 +34,12 @@ export default class MonitorMenu extends React.Component {
                     <div>
                         <div>Voltage</div>
                         <div className="flex_simple">
-                            <ProgressBar min={0} max={100} current={this.props.temperature_cpu} mode={1} id={'vol1'} text={'CPU'}/>
-                            <ProgressBar min={0} max={100} current={this.props.temperature_mb} mode={1} id={'vol2'} text={'5 V'}/>
+                            <ProgressBar min={0} max={1.5} current={1.31} mode={1} id={'vol1'} text={'CPU'}/>
+                            <ProgressBar min={0} max={5} current={4.85} mode={1} id={'vol2'} text={'5 V'}/>
                         </div>
                         <div className="flex_simple">
-                            <ProgressBar min={0} max={100} current={this.props.temperature_cpu} mode={1} id={'vol3'} text={'3.3 V'}/>
-                            <ProgressBar min={0} max={100} current={this.props.temperature_mb} mode={1} id={'vol4'} text={'12 V'}/>
+                            <ProgressBar min={0} max={3.3} current={3.29} mode={1} id={'vol3'} text={'3.3 V'}/>
+                            <ProgressBar min={0} max={12} current={11.8} mode={1} id={'vol4'} text={'12 V'}/>
                         </div>
                     </div>
                     <div>

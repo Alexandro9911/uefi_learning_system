@@ -15,9 +15,18 @@ export default class AiTweakerPage extends React.Component {
                     <h5 className="text-colored">Target CPU Turbo-Mode Frequency: 3105 MHz</h5>
                     <h5 className="text-colored">Target DRAM Frequency: 2186 MHz</h5>
                     <h5 className="text-colored">Target Cache Frequency: 2997 MHz</h5>
+
+                    <div className="warning-alert-container">
+                        <div className="warning-alert-body">
+                            Внимание! Температура достигла граничных значений.
+                            Требуется поменять конфигурацию, так как система нестабильна.
+                            <div className="warnind-alert-button">Закрыть</div>
+                        </div>
+                    </div>
+
+
                     <div className="grid_layout">
                         <h5>Ai Overclock tuner</h5>
-                        <button></button>
                         <select className="modal-select">
                             <option selected={true}>[Manual]</option>
                             <option>[Enabeled]</option>

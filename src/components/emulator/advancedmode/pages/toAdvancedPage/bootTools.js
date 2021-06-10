@@ -20,18 +20,55 @@ export default class BootTools extends React.Component {
     render() {
         if(this.props.page_advanced_accordion === 'boot'){
             return(
-                <div onClick={this.onClickHandlerClose}>
-                    <div>boot</div>
-                    <div>1</div>
-                    <div>1</div>
-                    <div>1</div>
-                    <div>1</div>
-                    <div>1</div>
+                <div>
+                    <div className="button_adv_item" onClick={this.onClickHandlerClose}>
+                        <h5>Boot settings v</h5>
+                    </div>
+                    <div className="grid_layout">
+                        <h5>SATA mode</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[AHCI]</option>
+                            <option>[RAID]</option>
+                        </select>
+                    </div>
+                    <div className="grid_layout">
+                        <h5>Selected sata 0.0</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[SEDC450R/480G]</option>
+                            <option>[RAID]</option>
+                        </select>
+                        <h5>Selected sata 0.1</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[SEDC450R/480G]</option>
+                            <option>[RAID]</option>
+                        </select>
+                        <h5>Selected sata 0.2</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[SEDC450R/480G]</option>
+                            <option>[RAID]</option>
+                        </select>
+                        <h5>Selected sata 0.3</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[SEDC450R/480G]</option>
+                            <option>[RAID]</option>
+                        </select>
+                        <h5>Selected sata 0.1</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[N\A]</option>
+                            <option>[RAID]</option>
+                        </select>
+                        <h5>Selected sata 0.1</h5>
+                        <select className="modal-select">
+                            <option selected={true}>[N\A]</option>
+                            <option>[RAID]</option>
+                        </select>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <div onClick={this.onClickHandlerOpen}>Boot</div>
+                <div className="button_adv_item" onClick={this.onClickHandlerOpen}>
+                    <h5>Boot settings ></h5></div>
             )
         }
     }

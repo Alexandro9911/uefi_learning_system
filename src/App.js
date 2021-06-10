@@ -22,7 +22,6 @@ function App() {
             <Router>
                 <Navbar/>
                 <Switch>
-
                     <Route path={"/registration_page"}>
                         <RegistrationContainer/>
                     </Route>

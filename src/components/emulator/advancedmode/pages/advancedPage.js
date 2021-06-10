@@ -3,6 +3,8 @@ import PowerManagement from "./toAdvancedPage/powerManagement";
 import BootTools from "./toAdvancedPage/bootTools";
 import CpuSettings from "./toAdvancedPage/cpuSettings";
 import MemorySettings from "./toAdvancedPage/memorySettings";
+import FanSettings from "./toAdvancedPage/fanSettings";
+import DdrSettings from "./toAdvancedPage/ddrSettings";
 export default class AdvancedPage extends React.Component {
     constructor(props) {
         super(props);
@@ -11,7 +13,6 @@ export default class AdvancedPage extends React.Component {
     render() {
         return (
             <div className="container_bios">
-                <div>Advanced page</div>
                 <PowerManagement
                     page_advanced_accordion={this.props.page_advanced_accordion}
                     setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
@@ -25,6 +26,14 @@ export default class AdvancedPage extends React.Component {
                     setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
                 />
                 <MemorySettings
+                    page_advanced_accordion={this.props.page_advanced_accordion}
+                    setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
+                />
+                <FanSettings
+                    page_advanced_accordion={this.props.page_advanced_accordion}
+                    setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
+                />
+                <DdrSettings
                     page_advanced_accordion={this.props.page_advanced_accordion}
                     setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
                 />

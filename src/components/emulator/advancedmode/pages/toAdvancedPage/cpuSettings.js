@@ -21,7 +21,9 @@ export default class CpuSettings extends React.Component {
         if(this.props.page_advanced_accordion === 'cpu'){
             return(
                 <div onClick={this.onClickHandlerClose}>
-                    <div>CPU</div>
+                    <div className="button_adv_item">
+                        <h5>CPU settings v</h5>
+                    </div>
                     <div>1</div>
                     <div>1</div>
                     <div>1</div>
@@ -31,7 +33,8 @@ export default class CpuSettings extends React.Component {
             )
         } else {
             return (
-                <div onClick={this.onClickHandlerOpen}>CPU</div>
+                <div className="button_adv_item" onClick={this.onClickHandlerOpen}>
+                    <h5>CPU settings ></h5></div>
             )
         }
     }

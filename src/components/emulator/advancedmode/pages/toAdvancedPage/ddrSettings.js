@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class MemorySettings extends React.Component {
+export default class DdrSettings extends React.Component {
     constructor(props) {
         super(props);
 
@@ -10,7 +10,7 @@ export default class MemorySettings extends React.Component {
 
     onClickHandlerOpen() {
         this.props.setPageAdvancedAccordion('none')
-        this.props.setPageAdvancedAccordion('memory');
+        this.props.setPageAdvancedAccordion('ddr');
     }
 
     onClickHandlerClose(){
@@ -18,11 +18,11 @@ export default class MemorySettings extends React.Component {
     }
 
     render() {
-        if(this.props.page_advanced_accordion === 'memory'){
+        if(this.props.page_advanced_accordion === 'ddr'){
             return(
                 <div onClick={this.onClickHandlerClose}>
                     <div className="button_adv_item">
-                        <h5>Memoru settings v</h5>
+                        <h5>RAM settings v</h5>
                     </div>
                     <div>1</div>
                     <div>1</div>
@@ -34,7 +34,7 @@ export default class MemorySettings extends React.Component {
         } else {
             return (
                 <div className="button_adv_item" onClick={this.onClickHandlerOpen}>
-                    <h5>Memory settings ></h5></div>
+                    <h5>RAM settings ></h5></div>
             )
         }
     }

@@ -12,6 +12,7 @@ export default class GroupList extends React.Component {
                     <div>Группа: {group.title}</div>
                     <div>Токен: {group.token}</div>
                     <div>Описание: {group.descr}</div>
+                    <div className="btn btn-sm btn-outline-danger">Удалить группу</div>
                 </div>);
             return (
                 <div>{items}</div>

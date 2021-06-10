@@ -4,6 +4,7 @@ import DynamicSelectCpu from "../../Elements/dynamicSelectCpu";
 import DynamicInputQuantity from "../../Elements/dynamicInputQuantity";
 import DynamicSelectMemory from "../../Elements/dynamicSelectMemory";
 import EmulatorFormContainer from "../../../containers/teacher/emulatorFormContainer";
+import MarksCriteriaForm from "./MarksCriteriaForm";
 
 export default class EmulatorFormCreate extends React.Component {
     constructor(props) {
@@ -124,7 +125,7 @@ export default class EmulatorFormCreate extends React.Component {
                 />
                 <br/>
                 <div className="dropdown-divider"/>
-                {/*<EmulatorFormContainer/>*/}
+                <MarksCriteriaForm/>
             </div>
         )
     }

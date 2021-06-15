@@ -10,6 +10,7 @@ import {practiceGroupReducer} from "./groupspractice/reducers";
 import {studentsPracticeReducer} from "./practice_student/reducers";
 import {emulatorRegucer} from "./emulator/reducers";
 import {emulatorModalReducer} from "./emulatorModals/reducers";
+import {teacherTestReducer} from "./teacherTests/reducers";
 
 export default combineReducers({
     auth: authReducer,
@@ -23,5 +24,6 @@ export default combineReducers({
     practicepage: practiceGroupReducer,
     studentpractice: studentsPracticeReducer,
     emulator: emulatorRegucer,
-    emulatormodals: emulatorModalReducer
+    emulatormodals: emulatorModalReducer,
+    teachertest:  teacherTestReducer
 })

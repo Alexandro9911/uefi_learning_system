@@ -16,6 +16,7 @@ import {initList} from "../../store/groups/actions";
 import TeacherTestPage from "../../components/teacher/teacherTestpage/teacherTestPage";
 import TeacherPracticePage from "../../components/teacher/TeacherPracticePage/TeacherPracticePage";
 import {setListGroupGractice} from "../../store/groupspractice/actions";
+import TeacherTestPageContainer from "./teacherTestPageContainer";
 
 class TeacherPageContainer extends Component {
     constructor(props) {
@@ -57,7 +58,7 @@ class TeacherPageContainer extends Component {
                         <GroupsPage/>
                     </Route>
                     <Route path={'/teacher_page/tests'}>
-                        <TeacherTestPage/>
+                        <TeacherTestPageContainer/>
                     </Route>
                     <Route path={'/teacher_page/practice'}>
                         <TeacherPracticePage

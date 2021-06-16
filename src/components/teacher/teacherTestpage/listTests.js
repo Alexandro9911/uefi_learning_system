@@ -26,7 +26,8 @@ export default class ListTests extends React.Component {
         })
             .then(response => response.json())
             .then(result => answ = result)
-        this.props.setList(JSON.parse(JSON.stringify(answ)));
+        let arr = Object.values(answ);
+         this.props.setList(arr)
     }
 
     render() {

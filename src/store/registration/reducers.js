@@ -1,9 +1,14 @@
 import {REG_EMAIL_CHANGE,REG_PASSW_CHANGE,REG_REP_PASSW_CHANGE} from "./actions";
 
 const initialState = {
+    name: "",
+    last_name: "",
+    middle_name: "",
+    who_i_am: 0,
     email: "",
     password: "",
-    repeatPassw :""
+    repeatPassw :"",
+
 }
 
 export const registrationReducer = (state = initialState, action) => {

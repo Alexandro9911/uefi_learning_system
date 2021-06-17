@@ -416,17 +416,17 @@ body{
 }
 
 .warning-alert-container{
-  position: fixed;
   margin: 10%;
+  position: absolute;
   padding: 3px;
   width: 55%;
   height: auto;
-  z-index: 2;
   background-color: #dc143c;
   border: brown solid 5px;
 }
 
 .warning-alert-body {
+  padding: 1%;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -435,7 +435,8 @@ body{
 }
 
 .warnind-alert-button {
-  padding: 2%;
+  padding: 1%;
+  margin: 2%;
   align-self: center;
   border: #0c0606 solid 5px;
 }

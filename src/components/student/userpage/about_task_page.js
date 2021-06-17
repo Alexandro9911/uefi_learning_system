@@ -8,19 +8,6 @@ export default class AboutTaskRage extends React.Component {
         this.onClickHandler = this.onClickHandler.bind(this);
     }
 
-    //
-    // theme(pin):'Второе практич…ние '
-    // for_group(pin):'1'
-    // group_id(pin):'1'
-    // group_descr(pin):'Тест'
-    // group_title(pin):'Группа 3530901…курс'
-    // ovner_middlename(pin):'Петрович'
-    // ovner_firstname(pin):'Петр'
-    // ovner_lastname(pin):'Петров'
-    // task(pin):'Проверить работу'
-    // date_from(pin):null
-    // date_to(pin):null
-    // emulator_id(pin):'2'
 
     async onClickHandler(e) {
         let emulator_str = this.props.practice.emulator_string;

@@ -4,110 +4,185 @@ import {
     CHANGE_TO_EZ_MODE,
     SET_TIME_SYSTEM,
     SET_DATE_SYSTEM,
-    SET_TEMPERATURE_CPU,
-    SET_TEMPERATURE_MB,
     SET_BOOT_PRIORITY,
     SET_PAGE,
-    SET_CPU_SPEED,
-    SET_CPU_FAN_SPEED,
-    SET_TEMPERATURE,
-    SET_TOTAL_MEM,
-    SET_BUS_SPEED,
-    SET_MULTIPLAYER_STR,
     SET_PAGE_ADVANCED_ACCORDION,
-    SET_MULTIPLAYER_ONE
+    CHANGE_AI_MODE,
+    CHANGE_MULTIPLAYER,
+    CHANGE_MULTIPLAYER_TO,
+    CHANGE_MULTIPLAYER_ARR,
+    SET_CURR_INDEX,
+    ACTION_MODAL_WARNING
 } from "./actions";
 
 const initialState = {
     emulator_object: {}, //  это начальные значения
 
-    temperature_cpu : 30, //  тут идут значения которые устанавливает пользователь в ходе работы.
-    temperature_mb: 23,
+
+    temperature_cpu : 0, //  тут идут значения которые устанавливает пользователь в ходе работы.
+    temperature_mb: 0,
+
     cpu_speed: 0,
     bus_speed: 0,
-    multiplayer_str: '',
-    multiplayer_mode: true,
-    voltage_cpu: 1.3,
-    voltage_low: 3.29,
-    voltage_mid: 5.01,
-    voltage_hight: 11.99,
-    boot_priority_str: '',
-    cpu_fan_speed: 0,
-    total_mem: 0,
-    multiplayer: 25,
 
+    max_cpu_freq: 0,
+    max_cpu_temp: 0,
+    multiplayer_str: '',
+    multiplayer_mode: false,
+    multiplayer_array: [],
+    multiplayer_to: '',
+    multiplayer: 0,
+    ai_mode: '',
+
+    voltage_cpu: 0,
+    voltage_low: 0,
+    voltage_mid: 0,
+    voltage_hight: 0,
+
+    boot_priority_str: '',
+
+    raid_ena: false,
+    ratio_limit_mode: '',
+    cpu_fan_mode: '',
+    min_mult:0,
+    max_mult:0,
+    quantity_cores: 0,
+    state_cores: [],
+    voltage_by_cores: [],
+    curr_date: '',
+    curr_time: '',
+
+    cpu_fan_speed: 0,
+
+    total_mem: 0,
+    max_rpm: 0,
     advanced_mode: false,  // значения для управления окнами ( системные)
     current_select: 'main',
-    page_advanced_accordion: 'none'
+    page_advanced_accordion: 'none',
+
+    alert_warning: false,
+    text_alert_warning: '',
+    curr_index: -1
 }
 
 export const emulatorRegucer = (state = initialState, action) =>{
     switch (action.type) {
-        case SET_MULTIPLAYER_ONE:
+        case INIT_EMULATOR_STORE: {
+            let emul_obj = JSON.parse(action.payload);
+            let mult_mode = true // когда процессор залочен будет false
+            let bus_speed = +emul_obj.cpu.bus_speed;
+            let ratio_limit_mode = 'auto'
+            let mult = emul_obj.cpu.multiplayer_current;
+            let speed = countSpeed(+mult,+bus_speed);
+            let temperature_cpu = countTemperature(speed);
+            let speedFan = countSpeedFan(temperature_cpu,emul_obj.listFan[0].max_rpm);
+            let total_mem = countMem(emul_obj.listDdr);
+            let mult_arr = getArray(emul_obj.cpu.multiplayer_by_core)
             return {
                 ...state,
-                multiplayer: action.payload
+                emulator_object: emul_obj,
+                bus_speed: +bus_speed,
+                temperature_cpu: temperature_cpu,
+                temperature_mb: 27,
+                cpu_speed: speed,
+                max_cpu_freq: +emul_obj.cpu.max_freq * 1000,
+                max_cpu_temp: +emul_obj.cpu.max_temperature,
+                multiplayer_mode: mult_mode,
+                multiplayer_array: mult_arr,
+                multiplayer: emul_obj.cpu.multiplayer_current,
+                ratio_limit_mode: ratio_limit_mode,
+                cpu_fan_speed: speedFan,
+                voltage_cpu: 1.29,
+                voltage_low: 3.01,
+                voltage_mid: 5.01,
+                voltage_hight: 12.02,
+                max_rpm: emul_obj.listFan[0].max_rpm,
+                boot_priority_str: emul_obj.boot_priority_str,
+                raid_ena: emul_obj.ena_raid,
+                cpu_fan_mode: 'auto',
+                min_mult: +emul_obj.cpu.multiplayer_min,
+                max_mult: +emul_obj.cpu.multiplayer_max,
+                total_mem: total_mem,
+                curr_time: emul_obj.system_time,
+                curr_date: emul_obj.system_date,
+                quantity_cores: +emul_obj.cpu.quantity_core,
+                multiplayer_to: 'auto',
+                ai_mode: 'auto'
             }
-        case SET_PAGE_ADVANCED_ACCORDION:
+        }
+        case ACTION_MODAL_WARNING:{
+            let stat = true;
+            let text = ''
+            if(action.payload === false){
+                stat = false
+            }
             return {
                 ...state,
-                page_advanced_accordion: action.payload
+                alert_warning: stat,
+                text_alert_warning: ''
             }
-        case SET_BUS_SPEED:
+        }
+        case SET_CURR_INDEX:
             return {
                 ...state,
-                bus_speed: action.payload
+                curr_index: action.payload
             }
-        case SET_MULTIPLAYER_STR:
+        case CHANGE_MULTIPLAYER_ARR:{
+            let speed = countSpeed(action.payload[0], state.bus_speed)
+            let temp = countTemperature(speed)
+            let fan = countSpeedFan(temp, state.max_rpm)
+            let warn = false
+            let text_warn = ''
+            if(temp > state.max_cpu_temp){
+                warn = true
+                text_warn= 'Достигнут температурный максимум. Системе угрожает опастность перегреваа!'
+            }
+            if(speed > state.max_cpu_freq){
+                warn = true
+                text_warn= 'Достигнуто предельное значение частоты. Система не стабильна!!'
+            }
             return {
                 ...state,
-                multiplayer_str: action.payload
+                multiplayer_array: action.payload,
+                cpu_speed: speed,
+                temperature_cpu: temp,
+                cpu_fan_speed: fan,
+                alert_warning: warn,
+                text_alert_warning: text_warn
             }
-        case SET_TOTAL_MEM:
+        }
+        case CHANGE_MULTIPLAYER_TO:
             return {
                 ...state,
-                total_mem: action.payload
+                multiplayer_to: action.payload
             }
-        case SET_TEMPERATURE:
+        case CHANGE_MULTIPLAYER:
+            let speed = countSpeed(+action.payload, state.bus_speed)
+            let temp = countTemperature(speed)
+            let fan = countSpeedFan(temp, state.max_rpm)
+            let warn = false
+            let text_warn = ''
+            if(temp > state.max_cpu_temp){
+                warn = true
+                text_warn= 'Достигнут температурный максимум. Системе угрожает опастность перегреваа!'
+            }
+            if(speed > state.max_cpu_freq){
+                warn = true
+                text_warn= 'Достигнуто предельное значение частоты. Система не стабильна!!'
+            }
             return {
                 ...state,
-                temperature_cpu: action.payload
+                multiplayer: action.payload,
+                cpu_speed: speed,
+                temperature_cpu: temp,
+                cpu_fan_speed: fan,
+                alert_warning: warn,
+                text_alert_warning: text_warn
             }
-        case SET_CPU_FAN_SPEED:
+        case CHANGE_AI_MODE:
             return {
                 ...state,
-                cpu_fan_speed: action.payload
-            }
-
-        case SET_CPU_SPEED:
-            return {
-                ...state,
-                cpu_speed: action.payload
-            }
-        case SET_PAGE:
-            return  {
-                ...state,
-                current_select: action.payload
-            }
-        case SET_BOOT_PRIORITY:
-            return {
-                ...state,
-                boot_priority_str: action.payload
-            }
-        case SET_TEMPERATURE_MB:
-            return {
-                ...state,
-                temperature_mb: action.payload
-            }
-        case SET_TEMPERATURE_CPU:
-            return {
-                ...state,
-                temperature_cpu: action.payload
-            }
-        case INIT_EMULATOR_STORE:
-            return {
-                ...state,
-                emulator_object: JSON.parse(action.payload)
+                ai_mode: action.payload
             }
         case CHANGE_TO_ADVANCED_MODE:
             return  {
@@ -129,6 +204,61 @@ export const emulatorRegucer = (state = initialState, action) =>{
                 ...state,
                 emulator_object: action.payload
             }
+        case SET_PAGE_ADVANCED_ACCORDION:
+            return {
+                ...state,
+                page_advanced_accordion: action.payload
+            }
+        case SET_PAGE:
+            return  {
+                ...state,
+                current_select: action.payload
+            }
+        case SET_BOOT_PRIORITY:
+            return {
+                ...state,
+                boot_priority_str: action.payload
+            }
     }
     return  state
+}
+
+function getArray(str){
+    let arr = str.split('#');
+    for(let i = 0; i < arr.length; i++){
+        arr[i] = +arr[i];
+    }
+    return arr
+}
+
+function countMem(list){
+    let total = 0;
+    let len = Object.values(list).length;
+    let ddrs = Object.values(list);
+    for (let i = 0; i < len; i++) {
+        total += +ddrs[i].mem
+    }
+    return total * 1024
+}
+
+function countSpeed(mult,bus){
+    return (mult * bus)
+}
+
+function countTemperature(a){
+    let x = Math.floor(a / 1000 * 100) / 100
+    let temperature = ((((x * (-18.859)) / Math.log(Math.abs((11.963 * x)) + 1.0E-5)) *
+        (-11.335)) / Math.log(Math.abs((((x * x) - 23.6686) * x)) + 1.0E-5))
+    return (Math.floor(temperature * 100) / 100) ;
+}
+
+function countSpeedFan(x,max){
+    let speed_fan_counted = (((((2855993.5481*(x-(-0.120)))^0.3965)
+        -(55.915-x))-(((16.6165/x)^(-3.181))-
+        ((-18.193)-x)))-37.9835);
+    speed_fan_counted = speed_fan_counted /100000
+    if (speed_fan_counted > +max) {
+        speed_fan_counted = +max
+    }
+    return (Math.floor(speed_fan_counted * 100) / 100);
 }

@@ -1,4 +1,8 @@
 import React from "react";
+import EmulatorSelect from "../../../Elements/emulatorSelect";
+import EmulatorInput from "../../../Elements/emulatorInput";
+import QuantityInputs from "../../../Elements/quantityInputs";
+import WarningModal from "../../../modals/warning_modal";
 export default class AiTweakerPage extends React.Component {
     constructor(props) {
         super(props);
@@ -8,37 +12,16 @@ export default class AiTweakerPage extends React.Component {
 
 
     singleCoreRatioLimit(e){
-        this.props.setMultiplayer(+e.target.value);
-
-        let speed = +e.target.value * +this.props.emulator_object.cpu.bus_speed
-        let max_freq = +this.props.emulator_object.cpu.max_freq * 1000;
-        if(speed > max_freq){
-            this.props.action(true);
-            this.props.text("Превышена максимальная частота процессора!");
-        }
-            this.props.setCPUfreq(Math.floor(speed * 100) / 100);
-
-            // Math.floor(num * 100) / 100
-            let x = speed / 1000;
-            x = Math.floor(x * 100) / 100
-            let temperature = ((((x * (-18.859)) / Math.log(Math.abs((11.963 * x)) + 1.0E-5)) *
-                (-11.335)) / Math.log(Math.abs((((x * x) - 23.6686) * x)) + 1.0E-5))
-            this.props.setCPUtemperature(Math.floor(temperature * 100) / 100);
-            x = Math.floor(temperature * 100) / 100
-
-
-            let speed_fan_counted = (((((2855993.5481 * (x - (-0.120))) ^ 0.3965)
-                - (55.915 - x)) - (((16.6165 / x) ^ (-3.181)) -
-                ((-18.193) - x))) - 37.9835);
-            speed_fan_counted = speed_fan_counted / 100000
-            if (speed_fan_counted > +this.props.emulator_object.listFan[0].max_rpm) {
-                speed_fan_counted = +this.props.emulator_object.listFan[0].max_rpm
-            }
-            this.props.setCPUfanSpeed(Math.floor(speed_fan_counted * 100) / 100);
 
     }
 
     render() {
+        let partial_arr = []
+        if(this.props.mutiplayer_mode){
+           partial_arr = ['auto','manual','disabled']
+        } else {
+            partial_arr = ['N/A']
+        }
         return (
             <div>
                 <div className="container_bios">
@@ -48,40 +31,37 @@ export default class AiTweakerPage extends React.Component {
 
                     <div className="grid_layout">
                         <h5>Ai Overclock tuner</h5>
-                        <select className="modal-select">
-                            <option selected={true}>[AUTO]</option>
-                            <option>[MANUAL]</option>
-                        </select>
+                        <EmulatorSelect
+                            partial_values={partial_arr}
+                            action={this.props.changeAImode}
+                            curr_selected={this.props.ai_mode}
+                            enabled={this.props.ai_mode}
+                        />
                         <h5>CPU core ratio</h5>
-                        <select className="modal-select">
-                            <option selected={true}>[AUTO]</option>
-                            <option>[PER CORE]</option>
-                        </select>
+                        <EmulatorSelect
+                            partial_values={['auto','per core']}
+                            action={this.props.changeMultiplayerTo}
+                            curr_selected={this.props.changeMultiplayerTo}
+                            enabled={this.props.mutiplayer_mode}
+                        />
                     </div>
                     <div className="grid_layout">
                         <h5>Core ratio limit</h5>
-                        <input className="modal-inputs"
-                               value={this.props.multiplayer}
-                            onChange={this.singleCoreRatioLimit}
+                        <EmulatorInput
+                        ena_value='auto'
+                        curr_ena_value={this.props.multiplayer_to}
+                        action={this.props.changeMultiplayer}
+                        value={this.props.multiplayer}
                         />
                     </div>
-                    <div className="grid_layout">
-                        <h5>1-core ratio limit</h5>
-                        <input className="modal-inputs"
-                               value={this.props.multiplayer}
-                        />
-                        <h5>2-core ratio limit</h5>
-                        <input className="modal-inputs"
-                               value={this.props.multiplayer}/>
-                        <h5>3-core ratio limit</h5>
-                        <input className="modal-inputs"
-                               value={this.props.multiplayer}
-                        />
-                        <h5>4-core ratio limit</h5>
-                        <input className="modal-inputs"
-                               value={this.props.multiplayer}
-                        />
-                    </div>
+                    <QuantityInputs
+                        array_values={this.props.multiplayer_array}
+                        ena={this.props.multiplayer_to}
+                        value={this.props.multiplayer}
+                        setArray={this.props.changeMultiplayerArr}
+                        setCurrIndex={this.props.setCurrIndex}
+                        curr_index={this.props.curr_index}
+                    />
                     <br/>
                     <div className="grid_layout">
                         <h5>DRAM odd Ratio Mode</h5>

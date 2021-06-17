@@ -3,12 +3,7 @@ import {connect} from "react-redux";
 import EzModePage from "../../components/emulator/ezmode/ezModePage";
 import {bindActionCreators} from "redux";
 import {
-    setCPUfanSpeed,
-    setCPUfreq,
-    setCPUtemperature,
     setDateSystem,
-    setTempCpu,
-    setTempMb, setTotalMem
 } from "../../store/emulator/actions";
 
 class EzModeContainer extends React.Component {
@@ -24,9 +19,7 @@ class EzModeContainer extends React.Component {
                     <EzModePage
                         emulator_object={this.props.emulator_object}
                         temperature_cpu={this.props.temperature_cpu}
-                        setTempCpu={this.props.setTempCpu}
                         temperature_mb={this.props.temperature_mb}
-                        setTempMb={this.props.setTempMb}
 
                         total_mem={this.props.total_mem}
                         cpu_speed={this.props.cpu_speed}
@@ -54,13 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setDate: bindActionCreators(setDateSystem,dispatch),
-        setTempCpu: bindActionCreators(setTempCpu,dispatch),
-        setTempMb: bindActionCreators(setTempMb,dispatch),
-        setCPUfreq: bindActionCreators(setCPUfreq,dispatch),
-        setCPUfanSpeed: bindActionCreators(setCPUfanSpeed, dispatch),
-        setCPUtemperature: bindActionCreators(setCPUtemperature,dispatch),
-        setTotalMem: bindActionCreators(setTotalMem,dispatch)
+        setDate: bindActionCreators(setDateSystem,dispatch)
     }
 }
 

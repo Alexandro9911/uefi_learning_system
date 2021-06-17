@@ -36,6 +36,12 @@ export default class TestCreateForm extends React.Component {
             theme: this.props.theme_test,
             group: this.props.for_group_test
         }
+
+        let quest_no_answ = this.props.current_test;
+        for(let i = 0; i < quest_no_answ.length; i++){
+            quest_no_answ[i]['answ'] = ""
+        }
+
         let answ = "";
         let resp = await fetch("http://localhost/uefi_learning_system/createTest.php", {
             method: "POST",
@@ -44,6 +50,7 @@ export default class TestCreateForm extends React.Component {
             },
             body: new URLSearchParams({
                 test: JSON.stringify(test),
+                for_user: JSON.stringify(quest_no_answ),
                 len: this.props.quant_quest,
                 myId: this.props.myId
             })

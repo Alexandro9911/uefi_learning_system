@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css'
 
-class Registration extends Component {
+export default class Registration extends Component {
     constructor(props) {
         super(props);
 
@@ -13,28 +13,29 @@ class Registration extends Component {
         this.passwChange = this.passwChange.bind(this);
         this.repPasswChange = this.repPasswChange.bind(this);
         this.whoIAmChange = this.whoIAmChange.bind(this);
+        this.onButtonClick = this.onButtonClick.bind(this);
     }
 
     familyChange(e){
-
+        this.props.setLastName(e.target.value);
     }
     nameChange(e){
-
+        this.props.setName(e.target.value);
     }
     fatherNameChange(e){
-
+        this.props.setMiddleName(e.target.value);
     }
 
     emailChange(e){
-
+        this.props.setEmail(e.target.value)
     }
 
     passwChange(e){
-
+        this.props.setPassw(e.target.value);
     }
     repPasswChange(e){
-        this.setState({rep_passw: e.target.value});
-        let label = document.getElementById("passw_validator")
+        this.props.setRepPassw(e.target.value);
+        // let label = document.getElementById("passw_validator")
         // if(this.state.passw === this.state.rep_passw){
         //     this.setState({passw_valid_text: "Correct"});
         //     label.style.color = '#489d4f';
@@ -45,7 +46,57 @@ class Registration extends Component {
     }
 
     whoIAmChange(e){
-        this.setState({who_i_am: e.target.value});
+        this.props.setWhoIam(+e.target.value);
+    }
+
+     async onButtonClick(e){
+         // $first_name = addslashes($_POST['name']);
+         // $last_name = addslashes($_POST['last_name']);
+         // $middle_name = addslashes($_POST['father_name']);
+         // $category = addslashes($_POST['category']);
+         // $email = addslashes($_POST['email']);
+         // $passw = addslashes($_POST['passw']);
+
+         let answ = "";
+        let resp = await fetch("http://localhost/uefi_learning_system/registryUser.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                name: this.props.name,
+                last_name: this.props.last_name,
+                father_name: this.props.middle_name,
+                category: this.props.who_i_am,
+                email: this.props.email,
+                passw: this.props.password
+            })
+        })
+            .then(response => response.text())
+            .then(result => answ = result)
+         // eslint-disable-next-line default-case
+            switch (answ) {
+                case 'user_exists':{
+                    alert("Пользователь с таким email уже существует.");
+                    break;
+                }
+                case 'success': {
+                    alert("Вы зарегистрированы");
+                    break;
+                }
+                case 'connection error': {
+                    alert("Ошибка соединения с базой данных");
+                    break;
+                }
+                case 'error in': {
+                    alert('Ошибка при выполнении запроса');
+                    break;
+                }
+                case 'error isset':{
+                    alert("Ошибка при передаче данных");
+                    break;
+                }
+            }
     }
 
 
@@ -60,7 +111,7 @@ class Registration extends Component {
                                placeholder="Фамилия"
                                required={true}
                              onChange={this.familyChange}
-                             value={this.state.last_name}
+                             value={this.props.last_name}
                         />
                         <label htmlFor="floatingInput">Фамилия</label>
                     </div>
@@ -69,7 +120,7 @@ class Registration extends Component {
                                placeholder="Имя"
                                required={true}
                             onChange={this.nameChange}
-                            value={this.state.name}
+                            value={this.props.name}
                         />
                         <label htmlFor="floatingPassword">Имя</label>
                     </div>
@@ -78,7 +129,7 @@ class Registration extends Component {
                                placeholder="Отчество"
                                required={true}
                              onChange={this.fatherNameChange}
-                             value={this.state.father_name}
+                             value={this.props.middle_name}
                         />
                         <label htmlFor="floatingInput">Отчество</label>
                     </div>
@@ -87,7 +138,7 @@ class Registration extends Component {
                                placeholder="name@example.com"
                                required={true}
                              onChange={this.emailChange}
-                             value={this.state.email}
+                             value={this.props.email}
                         />
                         <label htmlFor="floatingInput">Электронная почта</label>
                     </div>
@@ -96,7 +147,7 @@ class Registration extends Component {
                                placeholder="Password"
                                required={true}
                              onChange={this.passwChange}
-                             value={this.state.passw}
+                             value={this.props.password}
                         />
                         <label htmlFor="floatingPassword">Пароль</label>
                     </div>
@@ -105,17 +156,16 @@ class Registration extends Component {
                                placeholder="Password"
                                required={true}
                              onChange={this.repPasswChange}
-                             value={this.state.rep_passw}
+                             value={this.props.repeatPassw}
                         />
                         <label htmlFor="floatingPassword1">Повторите пароль</label>
                     </div>
-                    <small id="passw_validator"></small>
                     <div className="form-floating">
                         <select className="form-select" id="floatingSelect"
                                 aria-label="Floating label select example"
                                 required={true}
                              onChange={this.whoIAmChange}
-
+                                value={this.props.who_i_am}
                         >
                             <option value="0" selected>Студент</option>
                             <option value="1">Преподаватель</option>
@@ -123,11 +173,9 @@ class Registration extends Component {
                         <label htmlFor="floatingSelect">Я - </label>
                     </div>
                     <br/>
-                    <button className="btn btn-outline-dark">Зарегистрироваться</button>
+                    <button className="btn btn-outline-dark" onClick={this.onButtonClick}>Зарегистрироваться</button>
             </div>
             </small>
         );
     }
 }
-
-export default Registration;

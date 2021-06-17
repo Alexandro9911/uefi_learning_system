@@ -16,6 +16,8 @@ import {setStudentsPractice} from "../../../store/practice_student/actions";
 import AboutPracticePageContainer from "../practicepage/AboutPracticePageContainer";
 import EmulatorContainer from "../../emulator/emulatorContainer";
 import MainBar from "../../../components/student/userpage/mainBar";
+import TestPage from "../../../components/student/testPage/testPage";
+import TestPageContainer from "../testpage/testPageContainer";
 
 class UserpageContainer extends Component {
     constructor(props) {
@@ -67,17 +69,20 @@ class UserpageContainer extends Component {
         if(this.props.emulator_status){
             return (
                 <Switch>
-                    <Route path={'/user_page/practice_page/about_task'}>
-                        <AboutPracticePageContainer/>
+                    <Route path={'/user_page/join_group'}>
+                        <JoinGroup myId={this.props.id} userGroups={this.props.userGroups}/>
                     </Route>
                     <Route path={'/user_page/practice_page'}>
                         <PracticePageContainer/>
                     </Route>
-                    <Route path={'/user_page/join_group'}>
-                        <JoinGroup myId={this.props.id} userGroups={this.props.userGroups}/>
+                    <Route path={'/user_page/test_page'}>
+                        <TestPageContainer/>
                     </Route>
                     <Route path={'/user_page/emulator'}>
                         <EmulatorContainer/>
+                    </Route>
+                    <Route path={'/user_page/practice_page/about_task'}>
+                        <AboutPracticePageContainer/>
                     </Route>
                 </Switch>
             )

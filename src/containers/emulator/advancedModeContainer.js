@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import AdvancedModePage from "../../components/emulator/advancedmode/advancedModePage";
 import {bindActionCreators} from "redux";
 import {setDateSystem} from "../../store/emulator/actions";
+import Warning_modal from "../../components/modals/warning_modal";
+import {actionModalWarning, setTextWarningModal} from "../../store/modals/actions";
 
 class AdvancedModeContainer extends React.Component {
     constructor(props) {
@@ -29,13 +31,17 @@ class AdvancedModeContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         emulator_object: state.emulator.emulator_object,
-        current_select: state.emulator.current_select
+        current_select: state.emulator.current_select,
+        modal_warning: state.modals.modal_warning,
+        modal_warning_text: state.modals.modal_warning_text
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setDate: bindActionCreators(setDateSystem,dispatch)
+        setDate: bindActionCreators(setDateSystem,dispatch),
+        actionModalWarning: bindActionCreators(actionModalWarning,dispatch),
+        setTextWarningModal: bindActionCreators(setTextWarningModal,dispatch)
     }
 }
 

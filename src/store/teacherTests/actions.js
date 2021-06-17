@@ -22,10 +22,17 @@ export const ACTION_MODAL = 'ACTION_MODAL';
 
 export const SET_CURRENT_GROUP_TEST_SELECTED = 'SET_CURRENT_GROUP_TEST_SELECTED';
 
+export const SET_RESULTS_OF_GROUP = 'SET_RESULTS_OF_GROUP';
+
+export const setResultsOfGroup = (list) => ({
+    type: SET_RESULTS_OF_GROUP,
+    payload: list
+});
+
 export const setGroupSelection =(id) =>({
     type: SET_CURRENT_GROUP_TEST_SELECTED,
     payload: id
-})
+});
 
 export const setActionModal =(ac) => ({
    type: ACTION_MODAL,

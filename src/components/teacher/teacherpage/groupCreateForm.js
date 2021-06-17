@@ -52,7 +52,7 @@ class FormGroupCreate extends Component {
                 descr: this.props.descr,
                 token: this.props.token
             };
-            this.props.groups.addGroup(group);
+            this.props.groups.push(group);
         } else {
             alert("error")
         }

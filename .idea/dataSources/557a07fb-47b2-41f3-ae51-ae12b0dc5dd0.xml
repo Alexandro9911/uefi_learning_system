@@ -2025,7 +2025,7 @@ ALL PRIVILEGES|lis
     </column>
     <column id="576" parent="363" name="points">
       <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>text|0s</DataType>
     </column>
     <column id="577" parent="363" name="test_string">
       <Position>5</Position>

@@ -14,7 +14,8 @@ import {
     SET_TOTAL_MEM,
     SET_BUS_SPEED,
     SET_MULTIPLAYER_STR,
-    SET_PAGE_ADVANCED_ACCORDION
+    SET_PAGE_ADVANCED_ACCORDION,
+    SET_MULTIPLAYER_ONE
 } from "./actions";
 
 const initialState = {
@@ -33,6 +34,7 @@ const initialState = {
     boot_priority_str: '',
     cpu_fan_speed: 0,
     total_mem: 0,
+    multiplayer: 25,
 
     advanced_mode: false,  // значения для управления окнами ( системные)
     current_select: 'main',
@@ -41,6 +43,11 @@ const initialState = {
 
 export const emulatorRegucer = (state = initialState, action) =>{
     switch (action.type) {
+        case SET_MULTIPLAYER_ONE:
+            return {
+                ...state,
+                multiplayer: action.payload
+            }
         case SET_PAGE_ADVANCED_ACCORDION:
             return {
                 ...state,

@@ -2,13 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e91bb857-f0db-49b4-a726-1d98ad8f9fe0" name="Default Changelist" comment="tests_page dev">
+      <change afterPath="$PROJECT_DIR$/src/Server Scripts/checkTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server Scripts/selectResultsOfTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server Scripts/selectStudentTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modals/modal_test_results.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modals/warning_modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/student/testPage/resultWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/student/testPage/testPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/student/testPage/testWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/student/testpage/testPageContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/studentTests/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/studentTests/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/557a07fb-47b2-41f3-ae51-ae12b0dc5dd0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/557a07fb-47b2-41f3-ae51-ae12b0dc5dd0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server Scripts/selectTestsForGroups.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server Scripts/selectTestsForGroups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/advancedNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/advancedPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/advancedPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/aiTweakerPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/aiTweakerPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/monitorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/monitorPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/cpuSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/cpuSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/ddrSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/ddrSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/fanSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/emulator/advancedmode/pages/toAdvancedPage/fanSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modals/alertModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/alertModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modals/modal_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/modal_test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navs/StudentNavs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navs/StudentNavs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration/Registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/listTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/listTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/teacherTestPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/teacherTestPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/testCreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherTestpage/testCreateForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupCreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupCreateForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/teacher/teacherpage/groupList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/both/RegistrationContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/both/RegistrationContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/advancedPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/advancedPageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/aiTweakerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/aiTweakerContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/monitorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedContainers/monitorContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/advancedModeContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/emulator/emulatorContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/student/userpage/userpageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/teacher/teacherTestPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/teacher/teacherTestPageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/emulator/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/emulator/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/emulator/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modals/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modals/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modals/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modals/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/registration/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/registration/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/registration/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/registration/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/teacherTests/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/teacherTests/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/teacherTests/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/teacherTests/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +153,12 @@
       <workItem from="1623709993603" duration="597000" />
       <workItem from="1623766813212" duration="22371000" />
       <workItem from="1623836823342" duration="2206000" />
+      <workItem from="1623839086041" duration="271000" />
+      <workItem from="1623841421724" duration="3845000" />
+      <workItem from="1623845547183" duration="152000" />
+      <workItem from="1623845726045" duration="14014000" />
+      <workItem from="1623865193820" duration="1375000" />
+      <workItem from="1623881147249" duration="17053000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621983559133</created>
@@ -253,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623788740012</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="tests_page dev">
+      <created>1623839342396</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1623839342396</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

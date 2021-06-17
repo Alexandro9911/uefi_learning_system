@@ -24,7 +24,6 @@ class AdvancedNavBar extends React.Component {
                     <button value={'advanced'} onClick={this.onClickHandler} className="button-advanced">Advanced</button>
                     <button value={'boot'} onClick={this.onClickHandler} className="button-advanced">Boot</button>
                     <button value={'monitor'} onClick={this.onClickHandler} className="button-advanced">Monitor</button>
-                    <button value={'tools'} onClick={this.onClickHandler} className="button-advanced">Tools</button>
                 </div>
             </div>
         )

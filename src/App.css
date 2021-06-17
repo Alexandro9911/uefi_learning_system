@@ -283,6 +283,19 @@ a {
   border-radius: 3px;
 }
 
+.group_card_green {
+  padding: 2%;
+  margin: 1%;
+  border: rgb(24, 171, 24) solid 2px;
+  border-radius: 3px;
+}
+
+.group_card_red {
+  padding: 2%;
+  margin: 1%;
+  border: rgb(165, 12, 12) solid 2px;
+  border-radius: 3px;
+}
 .task_card {
   padding: 2%;
   margin: 1%;
@@ -403,10 +416,12 @@ body{
 }
 
 .warning-alert-container{
+  position: fixed;
   margin: 10%;
   padding: 3px;
   width: 55%;
   height: auto;
+  z-index: 2;
   background-color: #dc143c;
   border: brown solid 5px;
 }

@@ -8,8 +8,9 @@ import {
     setCurrentAnswer,
     setCurrentQuest,
     setCurrentTest, setCurrSelection, setGroupForTest,
-    setGroupTests, setNameTest, setQuantityQuest, setThemeTest,setGroupSelection
+    setGroupTests, setNameTest, setQuantityQuest, setThemeTest, setGroupSelection, setResultsOfGroup
 } from "../../store/teacherTests/actions";
+import {actionTestResults} from "../../store/modals/actions";
 
 class TeacherTestPageContainer extends React.Component {
     constructor(props) {
@@ -34,7 +35,12 @@ class TeacherTestPageContainer extends React.Component {
                 list_tests={this.props.list_tests}
                 ena_tests={this.props.ena_tests}
                 selected_group={this.props.selected_group}
+                status={this.props.status}
+                list_results={this.props.results_of_group}
 
+
+                setResultsOfGroup={this.props.setResultsOfGroup}
+                actionTestResults={this.props.actionTestResults}
                 setGroupSelection={this.props.setGroupSelection}
                 setCurrSelection={this.props.setCurrSelection}
                 setCurrentTest={this.props.setCurrentTest}
@@ -70,7 +76,9 @@ const mapStateToProps = (state) => {
         myId: state.auth.id,
         list_tests: state.teachertest.list_tests,
         ena_tests: state.teachertest.ena_tests,
-        selected_group: state.teachertest.selected_group
+        results_of_group: state.teachertest.results_of_group,
+        selected_group: state.teachertest.selected_group,
+        status: state.modals.modal_test_results
     }
 }
 
@@ -88,7 +96,9 @@ const mapDispatchToProps =(dispatch) => {
         setNameTest: bindActionCreators(setNameTest,dispatch),
         setCurrSelection: bindActionCreators(setCurrSelection, dispatch),
         setActionModal: bindActionCreators(setActionModal,dispatch),
-        setGroupSelection: bindActionCreators(setGroupSelection,dispatch)
+        setGroupSelection: bindActionCreators(setGroupSelection,dispatch),
+        actionTestResults: bindActionCreators(actionTestResults,dispatch),
+        setResultsOfGroup: bindActionCreators(setResultsOfGroup,dispatch)
     }
 }
 

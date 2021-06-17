@@ -10,7 +10,7 @@ export default function UserNavs() {
         <div>
             <ul><Link className="btn btn-sm btn-outline-secondary btn-block" to={`${match.url}/join_group`}>Вступить в группу</Link></ul>
             <ul><Link className="btn btn-sm btn-outline-secondary btn-block" to={`${match.url}/user_page`}>Теория</Link></ul>
-            <ul><Link className="btn btn-sm btn-outline-secondary btn-block" to={`${match.url}/user_page`}>Тесты</Link></ul>
+            <ul><Link className="btn btn-sm btn-outline-secondary btn-block" to={`${match.url}/test_page`}>Тесты</Link></ul>
             <ul><Link className="btn btn-sm btn-outline-secondary btn-block" to={`${match.url}/practice_page`}>Практика</Link></ul>
             <ul><Link className="btn btn-sm btn-outline-secondary btn-block" to={`${match.url}/user_page`}>Настройки профиля</Link></ul>
         </div>

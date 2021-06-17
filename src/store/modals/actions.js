@@ -11,14 +11,29 @@ export const SET_INDEX_GROUP = 'SET_INDEX_GROUP';
 export const SHOW_ALERT_MODAL = 'SHOW_ALERT_MODAL';
 export const HIDE_ALERT_MODAL = 'HIDE_ALERT_MODAL';
 
-export const showAlertModal = () => ({
-   type: SHOW_ALERT_MODAL,
-   payload: true
+export const ACTION_TEACHER_TEST_MODAL = 'ACTION_TEACHER_TEST_MODAL';
+
+export const ACTION_WARNING_MODAL = 'ACTION_WARNING_MODAL';
+export const SET_TEXT_WARNING_MODAL = 'SET_TEXT_WARNING_MODAL';
+
+export const actionModalWarning = (stat) => ({
+    type: ACTION_WARNING_MODAL,
+    payload: stat
 });
 
-export const hideAlertModal = () => ({
-   type: HIDE_ALERT_MODAL,
-   payload: false
+export const setTextWarningModal = (text) => ({
+   type: SET_TEXT_WARNING_MODAL,
+   payload: text
+});
+
+export const actionTestResults = (stat) => ({
+    type: ACTION_TEACHER_TEST_MODAL,
+    payload: stat
+});
+
+export const actionAlertModal = (stat) => ({
+   type: SHOW_ALERT_MODAL,
+   payload: stat
 });
 
 export const showTasks = () =>({

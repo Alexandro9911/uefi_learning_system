@@ -24,11 +24,7 @@ export default class DdrSettings extends React.Component {
                     <div className="button_adv_item">
                         <h5>RAM settings v</h5>
                     </div>
-                    <div>1</div>
-                    <div>1</div>
-                    <div>1</div>
-                    <div>1</div>
-                    <div>1</div>
+                    <div>[Object object]</div>
                 </div>
             )
         } else {

@@ -6,7 +6,10 @@ import {SHOW_MODAL_CREATE_PRACTICE,
     HIDE_MODAL_TASKS,
     SET_INDEX_GROUP,
     SHOW_ALERT_MODAL,
-    HIDE_ALERT_MODAL
+    HIDE_ALERT_MODAL,
+    ACTION_TEACHER_TEST_MODAL,
+    ACTION_WARNING_MODAL,
+    SET_TEXT_WARNING_MODAL
 } from "./actions";
 const initialState = {
     modal_practice: false,
@@ -15,11 +18,32 @@ const initialState = {
 
     tasks_for_group: null,
 
-    modal_alert: false
+    modal_alert: false,
+
+    modal_test_results: false,
+
+
+    warning_modal: false,
+    warning_modal_text: ''
 }
 
 export const modalReducer = (state=initialState, action) => {
     switch (action.type) {
+        case ACTION_WARNING_MODAL:
+            return {
+                ...state,
+                warning_modal: action.payload
+            }
+        case SET_TEXT_WARNING_MODAL:
+            return  {
+                ...state,
+                warning_modal_text: action.payload
+            }
+        case ACTION_TEACHER_TEST_MODAL:
+            return {
+                ...state,
+                modal_test_results: action.payload
+            }
         case SHOW_ALERT_MODAL:
             return {
                 ...state,

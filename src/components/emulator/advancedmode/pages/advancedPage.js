@@ -32,6 +32,7 @@ export default class AdvancedPage extends React.Component {
                 <FanSettings
                     page_advanced_accordion={this.props.page_advanced_accordion}
                     setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
+                    cpu_fan_speed={this.props.cpu_fan_speed}
                 />
                 <DdrSettings
                     page_advanced_accordion={this.props.page_advanced_accordion}

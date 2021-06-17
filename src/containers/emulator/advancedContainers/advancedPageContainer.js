@@ -15,6 +15,7 @@ class AdvancedPageContainer extends React.Component {
             <AdvancedPage
                 page_advanced_accordion={this.props.page_advanced_accordion}
                 setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
+                cpu_fan_speed={this.props.cpu_fan_speed}
             />
         )
     }
@@ -22,7 +23,8 @@ class AdvancedPageContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        page_advanced_accordion: state.emulator.page_advanced_accordion
+        page_advanced_accordion: state.emulator.page_advanced_accordion,
+        cpu_fan_speed: state.emulator.cpu_fan_speed
     }
 }
 

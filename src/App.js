@@ -16,12 +16,17 @@ import PracticePageContainer from "./containers/student/practicepage/practicePag
 import AboutPracticePageContainer from "./containers/student/practicepage/AboutPracticePageContainer";
 import EmulatorPage from "./components/emulator/EmulatorPage";
 import EmulatorContainer from "./containers/emulator/emulatorContainer";
+import TestPage from "./components/student/testPage/testPage";
+import TestPageContainer from "./containers/student/testpage/testPageContainer";
 
 function App() {
     return (
             <Router>
                 <Navbar/>
                 <Switch>
+                    <Route path={'/user_page/test_page'}>
+                        <TestPageContainer/>
+                    </Route>
                     <Route path={"/registration_page"}>
                         <RegistrationContainer/>
                     </Route>
@@ -34,6 +39,7 @@ function App() {
                     <Route path={"/teacher_page"}>
                         <TeacherPageContainer/>
                     </Route>
+
                     <Route path={'/teacher_page/tests>'}>
                         <TeacherTestPage/>
                     </Route>
@@ -43,6 +49,7 @@ function App() {
                     <Route path={'/user_page/practice_page'}>
                         <PracticePageContainer/>
                     </Route>
+
                     <Route path={'/user_page/practice_page/about_task'}>
                         <AboutPracticePageContainer/>
                     </Route>

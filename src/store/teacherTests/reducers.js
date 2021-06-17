@@ -13,7 +13,8 @@ import {
     SET_CURR_GROUP_TESTS,
     SET_LIST_TESTS,
     SET_CURRENT_GROUP_TEST_SELECTED,
-    ACTION_MODAL
+    ACTION_MODAL,
+    SET_RESULTS_OF_GROUP
 } from "./actions";
 
 const initialState = {
@@ -33,11 +34,17 @@ const initialState = {
 
     list_test: [],
     group_tests: [],
-    form_create_ena: false
+    form_create_ena: false,
+    results_of_group: []
 }
 
 export const teacherTestReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_RESULTS_OF_GROUP:
+            return {
+                ...state,
+                results_of_group: action.payload
+            }
         case SET_CURRENT_GROUP_TEST_SELECTED:
             return {
                 ...state,

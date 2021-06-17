@@ -43,10 +43,14 @@ export default class ListTests extends React.Component {
                         Отобразить тестовые задания группы
                     </button>
                     <Modal_test
+                        status={this.props.status}
                         ena_tests={this.props.ena_tests}
                         group_id={group.id}
                         group_tests={this.props.group_tests}
                         selected={this.props.selected_group}
+                        list_results={this.props.list_results}
+                        setResultsOfGroup={this.props.setResultsOfGroup}
+                        actionTestResults={this.props.actionTestResults}
                     />
                 </div>);
             return (

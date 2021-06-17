@@ -1,6 +1,7 @@
 import React from "react";
 import TestCreateForm from "./testCreateForm";
 import ListTests from "./listTests";
+import Modal_test_results from "../../modals/modal_test_results";
 
 class TeacherTestPage extends React.Component {
     render() {
@@ -41,6 +42,10 @@ class TeacherTestPage extends React.Component {
                     selected_group={this.props.selected_group}
                     myId={this.props.myId}
                     setGroupSelection={this.props.setGroupSelection}
+                    list_results={this.props.list_results}
+                    status={this.props.status}
+                    actionTestResults={this.props.actionTestResults}
+                    setResultsOfGroup={this.props.setResultsOfGroup}
                 />
             </div>
         );

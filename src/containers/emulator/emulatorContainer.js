@@ -8,6 +8,8 @@ import {
 import {bindActionCreators} from "redux";
 
 import {setCPUfreq, setCPUtemperature, setCPUfanSpeed, setTotalMem,setBusSpeed,setMultiplayerStr} from "../../store/emulator/actions";
+import Warning_modal from "../../components/modals/warning_modal";
+import {actionModalWarning, setTextWarningModal} from "../../store/modals/actions";
 
 class EmulatorContainer extends React.Component {
     constructor(props) {
@@ -63,13 +65,21 @@ class EmulatorContainer extends React.Component {
 
     render() {
         return (
-            <EmulatorPage
-                emulator_objecct={this.props.emulator_object}
-                toEzMode={this.props.toEzMode}
-                toAdvancedMode={this.props.toAdvancedMode}
-                emulator_status={this.props.emulator_status}
-                bus={this.props.bus_speed}
-            />
+            <div>
+                <Warning_modal
+                    modal_warning={this.props.modal_warning}
+                    modal_warning_text={this.props.modal_warning_text}
+                    setTextWarningModal={this.props.setTextWarningModal}
+                    actionModalWarning={this.props.actionModalWarning}
+                />
+                <EmulatorPage
+                    emulator_objecct={this.props.emulator_object}
+                    toEzMode={this.props.toEzMode}
+                    toAdvancedMode={this.props.toAdvancedMode}
+                    emulator_status={this.props.emulator_status}
+                    bus={this.props.bus_speed}
+                />
+            </div>
         );
     }
 }
@@ -79,7 +89,9 @@ const mapStateToProps = (state) => {
         emulator_object: state.emulator.emulator_object,
         emulator_status: state.emulator.advanced_mode,
         bus_speed: state.emulator.bus_speed,
-        multiplayer_str: state.emulator.multiplayer_str
+        multiplayer_str: state.emulator.multiplayer_str,
+        modal_warning: state.modals.modal_warning,
+        modal_warning_text: state.modals.modal_warning_text
     }
 }
 
@@ -92,7 +104,9 @@ const mapDispatchToProps = (dispatch) => {
         setCPUtemperature: bindActionCreators(setCPUtemperature, dispatch),
         setTotalMem: bindActionCreators(setTotalMem, dispatch),
         setBusSpeed: bindActionCreators(setBusSpeed,dispatch),
-        setMultiplayerStr: bindActionCreators(setMultiplayerStr,dispatch)
+        setMultiplayerStr: bindActionCreators(setMultiplayerStr,dispatch),
+        actionModalWarning: bindActionCreators(actionModalWarning,dispatch),
+        setTextWarningModal: bindActionCreators(setTextWarningModal,dispatch)
     }
 }
 

@@ -19,7 +19,14 @@ export const SET_TOTAL_MEM = 'SET_TOTAL_MEM';
 export const SET_BUS_SPEED ='SET_BUS_SPEED';
 export const SET_MULTIPLAYER_STR ='SET_MULTIPLAYER_STR';
 
+export const SET_MULTIPLAYER_ONE ='SET_MULTIPLAYER_ONE';
+
 export const SET_PAGE_ADVANCED_ACCORDION = 'SET_PAGE_ADVANCED_ACCORDION';
+
+export const setMultiplayer = (mult) => ({
+    type: SET_MULTIPLAYER_ONE,
+    payload: mult
+});
 
 export const setPageAdvancedAccordion = (selected) => ({
     type: SET_PAGE_ADVANCED_ACCORDION,

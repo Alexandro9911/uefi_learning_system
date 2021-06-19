@@ -20,8 +20,8 @@ export default class PowerManagement extends React.Component {
     render() {
         if(this.props.page_advanced_accordion === 'power'){
             return(
-                <div onClick={this.onClickHandlerClose}>
-                    <div className="button_adv_item">
+                <div>
+                    <div className="button_adv_item" onClick={this.onClickHandlerClose}>
                         <h5>Power management v</h5>
                     </div>
                     <div>1</div>

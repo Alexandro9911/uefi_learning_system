@@ -39,7 +39,9 @@ function App() {
                     <Route path={"/teacher_page"}>
                         <TeacherPageContainer/>
                     </Route>
-
+                    <Route path={'/teacher_page/emulator'}>
+                        <EmulatorContainer/>
+                    </Route>
                     <Route path={'/teacher_page/tests>'}>
                         <TeacherTestPage/>
                     </Route>

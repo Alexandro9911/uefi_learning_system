@@ -11,9 +11,12 @@ export default class AboutTaskRage extends React.Component {
 
     async onClickHandler(e) {
         let emulator_str = this.props.practice.emulator_string;
-        this.props.initEmulator(emulator_str);
+        if(this.props.practice.was_started === '0') {
+            this.props.initEmulator(emulator_str);
+        } else {
+            this.props.initEmulatorStarted(emulator_str);
+        }
         this.props.setEmulatorStarted();
-
     }
 
     render() {

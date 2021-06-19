@@ -441,5 +441,16 @@ body{
   border: #0c0606 solid 5px;
 }
 
+.ddr_container {
+  margin: 2%;
+  padding: 1%;
+}
+
+.wrapper {
+  margin: 1%;
+  padding: 1%;
+  width: 100%;
+}
+
 
 

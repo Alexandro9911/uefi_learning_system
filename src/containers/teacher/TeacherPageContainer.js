@@ -17,6 +17,7 @@ import TeacherTestPage from "../../components/teacher/teacherTestpage/teacherTes
 import TeacherPracticePage from "../../components/teacher/TeacherPracticePage/TeacherPracticePage";
 import {setListGroupGractice} from "../../store/groupspractice/actions";
 import TeacherTestPageContainer from "./teacherTestPageContainer";
+import EmulatorContainer from "../emulator/emulatorContainer";
 
 class TeacherPageContainer extends Component {
     constructor(props) {
@@ -46,29 +47,51 @@ class TeacherPageContainer extends Component {
     }
 
     render() {
-        return (
-            <div>
-            <div className="grid-container-user">
-                <div className="mainbar">
-                    <h6>{this.showFio()}</h6>
-                    <TeachersNavs/>
+        if(this.props.emulator_status){
+            return(
+                <div>
+                    <div className="grid-container-user">
+                        <Switch>
+                            <Route path={'/teacher_page/groups'}>
+                                <GroupsPage/>
+                            </Route>
+                            <Route path={'/teacher_page/tests'}>
+                                <TeacherTestPageContainer/>
+                            </Route>
+                            <Route path={'/teacher_page/practice'}>
+                                <TeacherPracticePage
+                                    listGroups={this.props.listGroups}
+                                />
+                            </Route>
+                        </Switch>
+                    </div>
                 </div>
-                <Switch>
-                    <Route path={'/teacher_page/groups'}>
-                        <GroupsPage/>
-                    </Route>
-                    <Route path={'/teacher_page/tests'}>
-                        <TeacherTestPageContainer/>
-                    </Route>
-                    <Route path={'/teacher_page/practice'}>
-                        <TeacherPracticePage
-                        listGroups={this.props.listGroups}
-                        />
-                    </Route>
-                </Switch>
-            </div>
-            </div>
-        );
+                )
+        } else {
+            return (
+                <div>
+                    <div className="grid-container-user">
+                        <div className="mainbar">
+                            <h6>{this.showFio()}</h6>
+                            <TeachersNavs/>
+                        </div>
+                        <Switch>
+                            <Route path={'/teacher_page/groups'}>
+                                <GroupsPage/>
+                            </Route>
+                            <Route path={'/teacher_page/tests'}>
+                                <TeacherTestPageContainer/>
+                            </Route>
+                            <Route path={'/teacher_page/practice'}>
+                                <TeacherPracticePage
+                                    listGroups={this.props.listGroups}
+                                />
+                            </Route>
+                        </Switch>
+                    </div>
+                </div>
+            );
+        }
     }
 }
 
@@ -82,7 +105,8 @@ const mapStateToProps = (state) => {
         auth: state.auth.auth,
         groups: state.listgroups.groups,
         modal_downloading_status: state.modals.modal_downloading,
-        listGroups: state.practicepage.listGroups
+        listGroups: state.practicepage.listGroups,
+        emulator_status: state.useractivity.emulator_status
     }
 }
 

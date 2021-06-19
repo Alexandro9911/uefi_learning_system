@@ -3,6 +3,12 @@ export const USER_SET_TESTS = 'USER_SET_TESTS';
 export const USER_SET_PRACTICE = 'USER_SET_PRACTICE';
 export const EMULATOR_STARTED = 'EMULATOR_STARTED';
 export const EMULATOR_CLOSED = 'EMULATOR_CLOSED';
+export const ACTION_TEACHER_EMULATOR='ACTION_TEACHER_EMULATOR';
+
+export const actionTeacherEmulator= (value) => ({
+    type: ACTION_TEACHER_EMULATOR,
+    payload: value
+})
 export const setUserGroups = (groups) => ({
     type: USER_SET_GROUPS,
     payload: groups

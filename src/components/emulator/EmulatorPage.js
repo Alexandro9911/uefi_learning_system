@@ -2,7 +2,6 @@ import React from "react";
 import InfoBarContainer from "../../containers/emulator/infoBarContainer";
 import EzModeContainer from "../../containers/emulator/ezModeContainer";
 import AdvancedModeContainer from "../../containers/emulator/advancedModeContainer";
-import Warning_modal from "../modals/warning_modal";
 import WarningModal from "../modals/warning_modal";
 
 
@@ -14,7 +13,7 @@ export default class EmulatorPage extends React.Component {
 
 
     render() {
-
+        console.log("em page : " +JSON.stringify(this.props.emulator_object))
         return (
             <div className="emulator_container">
                 <div className="background_emulator">

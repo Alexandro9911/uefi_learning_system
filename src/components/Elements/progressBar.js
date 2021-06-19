@@ -52,7 +52,7 @@ export default class ProgressBar extends React.Component {
                         <div className="flex_progress_label">
                             <div>{this.props.text}</div>
                             <div className="text-muted">
-                                {this.props.current} °C / {this.props.current * 9 / 5 + 32} °F
+                                {this.props.current} °C / {Math.floor(this.props.current * 9 / 5 + 32 * 100) / 100} °F
                             </div>
                         </div>
                         <div className="line_progress_wrapper">

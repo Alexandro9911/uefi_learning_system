@@ -12,7 +12,13 @@ import {
     CHANGE_MULTIPLAYER_TO,
     CHANGE_MULTIPLAYER_ARR,
     SET_CURR_INDEX,
-    ACTION_MODAL_WARNING
+    ACTION_MODAL_WARNING,
+    SET_DRAM_ODD_RATIO_MODE,
+    SET_DRAM_FREQ_VALUE,
+    SET_TIMING_DDR,
+    SET_MANUAL_FAN_MODE,
+    SET_FAN_GLOBAL_MODE,
+    INIT_EMULATOR_STARTED
 } from "./actions";
 
 const initialState = {
@@ -43,7 +49,6 @@ const initialState = {
 
     raid_ena: false,
     ratio_limit_mode: '',
-    cpu_fan_mode: '',
     min_mult:0,
     max_mult:0,
     quantity_cores: 0,
@@ -53,6 +58,15 @@ const initialState = {
     curr_time: '',
 
     cpu_fan_speed: 0,
+    simple_fan_speed: 0,
+    cpu_fan_mode: '',
+    fan_global_mode: 'auto',
+    manual_fan_speed: 'optimal',
+
+    dram_odd_ratio_mode: 'auto',
+    dram_freq_value: 0,
+    dram_freq_values_arr: [2186,2204,2486,2686],
+    list_ddr:[],
 
     total_mem: 0,
     max_rpm: 0,
@@ -67,6 +81,11 @@ const initialState = {
 
 export const emulatorRegucer = (state = initialState, action) =>{
     switch (action.type) {
+        case INIT_EMULATOR_STARTED: {
+            return {
+                ...JSON.parse(action.payload)
+            }
+        }
         case INIT_EMULATOR_STORE: {
             let emul_obj = JSON.parse(action.payload);
             let mult_mode = true // когда процессор залочен будет false
@@ -92,6 +111,7 @@ export const emulatorRegucer = (state = initialState, action) =>{
                 multiplayer: emul_obj.cpu.multiplayer_current,
                 ratio_limit_mode: ratio_limit_mode,
                 cpu_fan_speed: speedFan,
+                simple_fan_speed: 1000,
                 voltage_cpu: 1.29,
                 voltage_low: 3.01,
                 voltage_mid: 5.01,
@@ -103,13 +123,94 @@ export const emulatorRegucer = (state = initialState, action) =>{
                 min_mult: +emul_obj.cpu.multiplayer_min,
                 max_mult: +emul_obj.cpu.multiplayer_max,
                 total_mem: total_mem,
+                dram_freq_value: 2186,
+                list_ddr: emul_obj.listDdr,
                 curr_time: emul_obj.system_time,
                 curr_date: emul_obj.system_date,
                 quantity_cores: +emul_obj.cpu.quantity_core,
                 multiplayer_to: 'auto',
-                ai_mode: 'auto'
+                ai_mode: 'auto',
+                cpu_global_mode: 'auto',
+                manual_fan_speed: 'optimal'
             }
         }
+
+        case SET_TIMING_DDR:{
+            let arr = state.list_ddr;
+            arr[action.payload.index][action.payload.type_val] = action.payload.value;
+            return {
+                ...state,
+                list_ddr: arr
+            }
+        }
+        case SET_MANUAL_FAN_MODE: {
+            let speed0 = 0
+            let speed1 = 0
+            const min_fan_0 = +state.emulator_object.listFan[0].min_rpm;
+            const max_fan_0 = +state.emulator_object.listFan[0].max_rpm;
+
+            const min_fan_1 = +state.emulator_object.listFan[1].min_rpm;
+            const max_fan_1 = +state.emulator_object.listFan[1].max_rpm;
+
+            let interval0 = max_fan_0 - min_fan_1 / 3;
+            let interval1 = max_fan_1 - min_fan_1 / 3;
+
+            if(action.payload === 'fast'){
+                speed0 = max_fan_0;
+                speed1 = max_fan_1;
+            }
+            if(action.payload === 'slow'){
+                speed0 = min_fan_0;
+                speed1 = min_fan_1;
+            }
+            if(action.payload === 'optimal'){
+                speed0 = interval0;
+                speed1 =  interval1
+            }
+            return {
+                ...state,
+                manual_fan_speed: action.payload,
+                cpu_fan_speed: speed0,
+                simple_fan_speed: speed1
+            }
+        }
+
+        case SET_FAN_GLOBAL_MODE: {
+            let speed0 = 0;
+            let speed1 = 0;
+
+            const min_fan_0 = +state.emulator_object.listFan[0].min_rpm;
+            const max_fan_0 = +state.emulator_object.listFan[0].max_rpm;
+
+            const min_fan_1 = +state.emulator_object.listFan[1].min_rpm;
+            const max_fan_1 = +state.emulator_object.listFan[1].max_rpm;
+
+            let interval0 = max_fan_0 - min_fan_1 / 3;
+            let interval1 = max_fan_1 - min_fan_1 / 3;
+
+            if(action.payload === 'auto'){
+                speed0 = countSpeedFan(state.temperature_cpu,max_fan_0);
+                speed1 = countSpeedFan(state.temperature_cpu,max_fan_1);
+            } else {
+                speed0 = min_fan_0 + interval0;
+                speed1 = min_fan_1 + interval1;
+            }
+            return {
+                ...state,
+                simple_fan_speed: speed1,
+                cpu_fan_speed: speed0
+            }
+        }
+        case SET_DRAM_FREQ_VALUE:
+            return {
+                ...state,
+                dram_freq_value: +action.payload
+            }
+        case SET_DRAM_ODD_RATIO_MODE:
+            return {
+                ...state,
+                dram_odd_ratio_mode: action.payload
+            }
         case ACTION_MODAL_WARNING:{
             let stat = true;
             let text = ''
@@ -130,7 +231,10 @@ export const emulatorRegucer = (state = initialState, action) =>{
         case CHANGE_MULTIPLAYER_ARR:{
             let speed = countSpeed(action.payload[0], state.bus_speed)
             let temp = countTemperature(speed)
-            let fan = countSpeedFan(temp, state.max_rpm)
+            let fan = state.cpu_fan_speed
+            if(state.fan_global_mode === 'auto') {
+                 fan = countSpeedFan(temp, state.max_rpm)
+            }
             let warn = false
             let text_warn = ''
             if(temp > state.max_cpu_temp){
@@ -159,7 +263,12 @@ export const emulatorRegucer = (state = initialState, action) =>{
         case CHANGE_MULTIPLAYER:
             let speed = countSpeed(+action.payload, state.bus_speed)
             let temp = countTemperature(speed)
-            let fan = countSpeedFan(temp, state.max_rpm)
+            let fan = state.cpu_fan_speed
+            if(state.fan_global_mode === 'auto') {
+                fan = countSpeedFan(temp, state.max_rpm)
+            } else {
+                fan = state.cpu_fan_speed
+            }
             let warn = false
             let text_warn = ''
             if(temp > state.max_cpu_temp){
@@ -242,7 +351,7 @@ function countMem(list){
 }
 
 function countSpeed(mult,bus){
-    return (mult * bus)
+    return Math.floor((mult * bus) * 100) / 100
 }
 
 function countTemperature(a){

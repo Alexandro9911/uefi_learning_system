@@ -8,7 +8,7 @@ import {
     changeAImode,
     changeMultiplayer,
     changeMultiplayerArray,
-    changeMultiplayerTo, setCurrIndex
+    changeMultiplayerTo, setCurrIndex, setDramFreqValue, setDrammOddRatioMode
 } from "../../../store/emulator/actions";
 import Warning_modal from "../../../components/modals/warning_modal";
 import WarningModal from "../../../components/modals/warning_modal";
@@ -31,7 +31,12 @@ class AiTweakerContainer extends React.Component {
                 multiplayer={this.props.multiplayer}
                 ai_mode={this.props.ai_mode}
                 curr_index={this.props.curr_index}
+                dram_odd_ratio_mode={this.props.dram_odd_ratio_mode}
+                dram_freq_value={this.props.dram_freq_value}
+                dram_freq_values_arr={this.props.dram_freq_values_arr}
 
+                setDramFreqValue={this.props.setDramFreqValue}
+                setDramOddRatioMode={this.props.setDramOddRatioMode}
                 changeMultiplayer={this.props.changeMultiplayer}
                 changeMultiplayerTo={this.props.changeMultiplayerTo}
                 changeAImode={this.props.changeAImode}
@@ -54,6 +59,9 @@ const mapStateToProps = (state) => {
         multiplayer: state.emulator.multiplayer,
         ai_mode: state.emulator.ai_mode,
         curr_index: state.emulator.curr_index,
+        dram_odd_ratio_mode: state.emulator.dram_odd_ratio_mode,
+        dram_freq_value: state.emulator.dram_freq_value,
+        dram_freq_values_arr: state.emulator.dram_freq_values_arr,
 
         modal_warning: state.emulator.alert_warning,
         modal_warning_text: state.emulator.text_alert_warning
@@ -68,6 +76,8 @@ const mapDispatchToProps = (dispatch) => {
         changeMultiplayerArr: bindActionCreators(changeMultiplayerArray,dispatch),
         setCurrIndex: bindActionCreators(setCurrIndex,dispatch),
         actionModalWarning: bindActionCreators(actionModalWarningAlert,dispatch),
+        setDramOddRatioMode: bindActionCreators(setDrammOddRatioMode,dispatch),
+        setDramFreqValue: bindActionCreators(setDramFreqValue,dispatch)
     }
 }
 

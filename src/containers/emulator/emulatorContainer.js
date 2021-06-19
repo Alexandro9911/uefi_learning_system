@@ -7,9 +7,9 @@ import {
     changeToEzMode
 } from "../../store/emulator/actions";
 import {bindActionCreators} from "redux";
-import Warning_modal from "../../components/modals/warning_modal";
-import {actionModalWarning, setTextWarningModal} from "../../store/modals/actions";
-import WarningModal from "../../components/modals/warning_modal";
+import { setTextWarningModal} from "../../store/modals/actions";
+import {setEmulatorStarted} from "../../store/userpage/actions";
+import EmulatorResultContainer from "./emulatorResultContainer";
 
 class EmulatorContainer extends React.Component {
     constructor(props) {
@@ -18,26 +18,39 @@ class EmulatorContainer extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                <EmulatorPage
-                    emulator_status={this.props.emulator_status}
+        console.log("em cont : " + JSON.stringify(this.props.emulator_object))
 
-                    modal_warning={this.props.modal_warning}
-                    modal_warning_text={this.props.modal_warning_text}
-                    actionModalWarning={this.props.actionModalWarning}
-                />
-            </div>
-        );
-    }
+            if (this.props.emulator_status) {
+                return (
+                    <div>
+                        <EmulatorPage
+                            emulator_status={this.props.advanced_mode}
+                            emulator_object={this.props.emulator_object}
+                            modal_warning={this.props.modal_warning}
+                            modal_warning_text={this.props.modal_warning_text}
+                            actionModalWarning={this.props.actionModalWarning}
+                        />
+                    </div>
+                );
+            } else {
+                return (
+                    <EmulatorResultContainer
+                        emulator_status={this.props.emulator_status}
+                    />
+                )
+            }
+        }
+
 }
 
 const mapStateToProps = (state) => {
     return {
         emulator_object: state.emulator.emulator_object,
-        emulator_status: state.emulator.advanced_mode,
+        emulator_status: state.useractivity.emulator_status,
+        advanced_mode: state.emulator.advanced_mode,
         modal_warning: state.emulator.alert_warning,
-        modal_warning_text: state.emulator.text_alert_warning
+        modal_warning_text: state.emulator.text_alert_warning,
+        teacher_emulator: state.useractivity.teacher_emulator,
     }
 }
 
@@ -47,6 +60,7 @@ const mapDispatchToProps = (dispatch) => {
         toAdvancedMode: bindActionCreators(changeToAdvancedMode, dispatch),
         actionModalWarning: bindActionCreators(actionModalWarningAlert,dispatch),
         setTextWarningModal: bindActionCreators(setTextWarningModal,dispatch),
+        setEmulatorStarted: bindActionCreators(setEmulatorStarted, dispatch),
     }
 }
 

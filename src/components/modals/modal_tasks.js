@@ -5,6 +5,7 @@ export default class Modal_tasks extends React.Component {
         super(props);
 
         this.onClickHandler = this.onClickHandler.bind(this);
+        this.onClickResults = this.onClickResults.bind(this);
     }
 
     onClickHandler(e) {
@@ -36,6 +37,30 @@ export default class Modal_tasks extends React.Component {
         }
     }
 
+    async onClickResults(e){
+        let index = e.target.value;
+        let task = this.props.list[+index];
+
+        let practice_id = task.id;
+        let group_id = task.for_group;
+        let emulator_id = task.emulator_id;
+        let answ = '';
+        let resp = await fetch("http://localhost/uefi_learning_system/selectPracticeResultsGroup.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                 practice_id: practice_id,
+                 group_id: group_id,
+                 emulator_id: emulator_id
+            })
+        })
+            .then(response => response.json())
+            .then(result => answ = result)
+            this.props.setListResults(JSON.stringify(answ));
+            this.props.actionEnaListRes(true);
+    }
 
     render() {
         if (+this.props.curr === +this.props.index && this.props.status) {
@@ -43,26 +68,32 @@ export default class Modal_tasks extends React.Component {
             let len = Object.values(tasks).length
             if (len > 0) {
                 const items = tasks.map((task, i) =>
-                    <div key={i}>
-                        <div>{task.theme}</div>
-                        <div>{this.shortTask(task.task)}</div>
-                        <div>Сроки выполнения: {this.getDeadlines(task.date_from, task.date_to)}</div>
+                    <div key={i} className="card">
+                        <div className="card-body">
+                            <div>{task.theme}</div>
+                            <div>{this.shortTask(task.task)}</div>
+                            <div>Сроки выполнения: {this.getDeadlines(task.date_from, task.date_to)}</div>
+                            <button className="btn btn-sm btn-outline-dark" value={i} onClick={this.onClickResults}>Результаты группы</button>
+                        </div>
                     </div>
                 );
                 return (
-                    <div className="task_card">
+                    <div>
+                        <br/>
                         <div>{items}</div>
                         <div className="dropdown-divider"/>
                         <div className="flex_btn">
                             <button className="btn btn-sm btn-outline-dark" onClick={this.onClickHandler}>Скрыть</button>
-                            <button className="btn btn-sm btn-outline-dark" onClick={this.onClickHandler}>Результаты группы</button>
                         </div>
                     </div>
                 );
             } else {
                 return (
-                    <div className="task_card">
-                        У этой группы нет заданий.
+                    <div>
+                        <br/>
+                        <div className="card card-body">
+                            У этой группы нет заданий.
+                        </div>
                         <br/>
                         <button className="btn btn-sm btn-outline-dark" onClick={this.onClickHandler}>Скрыть</button>
                     </div>

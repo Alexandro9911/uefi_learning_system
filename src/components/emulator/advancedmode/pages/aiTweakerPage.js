@@ -7,12 +7,6 @@ export default class AiTweakerPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.singleCoreRatioLimit = this.singleCoreRatioLimit.bind(this);
-    }
-
-
-    singleCoreRatioLimit(e){
-
     }
 
     render() {
@@ -26,7 +20,7 @@ export default class AiTweakerPage extends React.Component {
             <div>
                 <div className="container_bios">
                     <h5 className="text-colored">Target CPU Turbo-Mode Frequency: {this.props.cpu_speed} MHz</h5>
-                    <h5 className="text-colored">Target DRAM Frequency: 2186 MHz</h5>
+                    <h5 className="text-colored">Target DRAM Frequency: {this.props.dram_freq_value} MHz</h5>
                     <h5 className="text-colored">Target Cache Frequency: 2997 MHz</h5>
 
                     <div className="grid_layout">
@@ -65,21 +59,21 @@ export default class AiTweakerPage extends React.Component {
                     <br/>
                     <div className="grid_layout">
                         <h5>DRAM odd Ratio Mode</h5>
-                        <select className="modal-select">
-                            <option selected={true}>[Enabled]</option>
-                            <option>[Enabeled]</option>
-                        </select>
+                        <EmulatorSelect
+                            partial_values={['disabled','100:100', '100:133']}
+                            action={this.props.setDramOddRatioMode}
+                            curr_selected={this.props.dram_odd_ratio_mode}
+                            enabled={true}
+                        />
                         <h5>Frequency DRAM</h5>
-                        <select className="modal-select">
-                            <option selected={true}>[DDR4-2186MHZ]</option>
-                            <option>[Enabeled]</option>
-                        </select>
-                        <h5>CPU core ratio</h5>
-                        <select className="modal-select">
-                            <option selected={true}>[Per core]</option>
-                            <option>[Enabeled]</option>
-                        </select>
+                        <EmulatorSelect
+                            partial_values={this.props.dram_freq_values_arr}
+                            action={this.props.setDramFreqValue}
+                            curr_selected={this.props.dram_freq_value}
+                            enabled={true}
+                        />
                     </div>
+                    <small className="text-muted">If you need to setup timings DDR, see Advanced page -> Memory settings</small>
                 </div>
             </div>
         )

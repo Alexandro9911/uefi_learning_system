@@ -1,6 +1,7 @@
 import React from "react";
 import DynamicSelect from "../Elements/dynamicSelect";
 import EmulatorFormContainer from "../../containers/teacher/emulatorFormContainer";
+import {Link} from "react-router-dom";
 
 export default class ModalCreatePractice extends React.Component {
     constructor(props) {
@@ -12,7 +13,6 @@ export default class ModalCreatePractice extends React.Component {
         this.changeDateFrom = this.changeDateFrom.bind(this);
         this.changeDateTo = this.changeDateTo.bind(this);
         this.onClickSave = this.onClickSave.bind(this);
-        this.sendCreatedPractice = this.sendCreatedPractice.bind(this);
     }
 
     hideModal() {
@@ -37,7 +37,8 @@ export default class ModalCreatePractice extends React.Component {
 
     async onClickSave(e) {
         this.props.showModalDownloading();
-
+        alert("Cейчас вы будете перенаправлены в эмулятор, для того чтобы внести правки в задание." +
+            " После выхода из эмулятора задание автоматически сохранится и разошлется пользователям.")
         let emulator_params = {
             motherboard: this.props.motherboard,
             cpu: this.props.cpu,
@@ -55,6 +56,20 @@ export default class ModalCreatePractice extends React.Component {
             ovner_id: this.props.myid
         }
 
+        let critetia = {
+            interval_temp: this.props.interval_temp,
+            interval_freq_cpu: this.props.interval_freq_cpu,
+            sync_ddr: this.props.sync_ddr,
+            raid_created: this.props.raid_created,
+            date_time_setup: this.props.date_time_setup,
+            bus_freq_modifyed: this.props.bus_freq_modifyed,
+            mode_mult: this.props.mode_mult,
+            req_mult: this.props.req_mult,
+            req_mult_array: this.props.req_mult_array,
+            state_cores: this.props.state_cores,
+            boot_priority: this.props.boot_priority,
+        }
+
         let answ = '';
         let resp = await fetch("http://localhost/uefi_learning_system/createEmulator.php", {
             method: "POST",
@@ -63,7 +78,8 @@ export default class ModalCreatePractice extends React.Component {
             },
             body: new URLSearchParams({
                 emulator_params: JSON.stringify(emulator_params),
-                about_ovner: JSON.stringify(about_ovner)
+                about_ovner: JSON.stringify(about_ovner),
+                criteria: JSON.stringify(critetia)
             })
         })
             .then(response => response.json())
@@ -72,35 +88,12 @@ export default class ModalCreatePractice extends React.Component {
         // here some code to get response with settings for emulator from server
         let emul = JSON.parse(JSON.stringify(answ));
 
-        let answ1 = '';
-        let resp1 = await fetch("http://localhost/uefi_learning_system/finallizeCreating.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-            },
-            body: new URLSearchParams({
-                group_id: this.props.group_id,
-                practice_id: emul['practice_id'],
-                emulator_params: JSON.stringify(answ),
-                my_id: this.props.myid,
-                about_ovner: about_ovner
-            })
-        })
-            .then(response => response.text())
-            .then(result => answ1 = result)
-        if (answ1 === "success") {
-            //alert('all ok');
-        } else {
-            alert("some error");
-        }
-
+        // alert(answ);
+        this.props.initEmulator(JSON.stringify(answ));
         this.props.hideModalDownloading();
         this.props.hideModalPractice();
-
-    }
-
-    async sendCreatedPractice(emul, about_ovner) {
-
+        this.props.actionTeacherEmulator(true);
+        this.props.setEmulatorStarted();
     }
 
     render() {
@@ -161,7 +154,9 @@ export default class ModalCreatePractice extends React.Component {
                     </form>
                     <div className="flex_perf">
                         <button onClick={this.hideModal} className="btn btn-sm btn-outline-danger">Закрыть</button>
-                        <button onClick={this.onClickSave} className="btn btn-sm btn-outline-success">Coхранить</button>
+                        <div  onClick={this.onClickSave} className="btn btn-sm btn-outline-success">
+                            Coхранить
+                        </div>
                     </div>
                 </div>
             )

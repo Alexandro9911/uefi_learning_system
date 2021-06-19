@@ -3,19 +3,26 @@ import {
     USER_SET_TESTS,
     USER_SET_GROUPS,
     EMULATOR_CLOSED,
-    EMULATOR_STARTED
+    EMULATOR_STARTED,
+    ACTION_TEACHER_EMULATOR
 } from "./actions";
 
 const initialState = {
     groups: [],
     tests: [],
     practice: [],
-    emulator_status: false
+    emulator_status: false,
+    teacher_emulator: false,
 }
 
 export const userActivityReducer = (state = initialState, action) =>{
     // eslint-disable-next-line default-case
     switch (action.type) {
+        case ACTION_TEACHER_EMULATOR:
+            return {
+                ...state,
+                teacher_emulator: action.payload
+            }
         case USER_SET_GROUPS:
             return {
                 ...state,

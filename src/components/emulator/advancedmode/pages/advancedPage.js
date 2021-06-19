@@ -17,10 +17,6 @@ export default class AdvancedPage extends React.Component {
                     page_advanced_accordion={this.props.page_advanced_accordion}
                     setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
                 />
-                <BootTools
-                    page_advanced_accordion={this.props.page_advanced_accordion}
-                    setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}
-                />
                 <CpuSettings
                     page_advanced_accordion={this.props.page_advanced_accordion}
                     setPageAdvancedAccordion={this.props.setPageAdvancedAccordion}

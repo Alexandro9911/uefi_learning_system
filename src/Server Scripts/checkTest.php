@@ -8,7 +8,7 @@ if (isset($_POST['test_id']) && isset($_POST['myId']) && isset($_POST['results']
     $myId= $_POST['myId'];
     $results = json_decode($_POST['results'], true);
 
-    $connection = mysqli_connect('localhost', 'Alexandro', 'Zxcvb1199nm', 'uefi_proj', '3306');
+    $connection = mysqli_connect('');
     if (!$connection) {
         echo "connection error";
         die("Connection failed: " . mysqli_connect_error());

@@ -9,7 +9,7 @@ if(isset($_POST['email']) && isset($_POST['passw'])) {
     $passw = addslashes($_POST['passw']);
 
     $answer = array();
-    $connection = mysqli_connect('localhost', 'Alexandro', 'Zxcvb1199nm', 'uefi_proj', '3306');
+    $connection = mysqli_connect('');
     if (!$connection) {
         $answer['result'] = "connection error";
         echo json_encode($answer);
